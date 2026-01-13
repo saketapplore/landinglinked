@@ -3,26 +3,26 @@ function App() {
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-3 items-center h-16">
             {/* Logo */}
             <div className="flex items-center justify-start">
               <img 
                 src="/images/linkedlogo11.png" 
                 alt="LinkED to home" 
-                className="h-14 object-fill"
+                className="h-20 object-fill"
               />
             </div>
             {/* Navigation Links - Centered */}
-            <div className="hidden md:flex space-x-8 items-center justify-center">
-              <a href="#home" className="text-gray-700 hover:text-gray-900 transition-colors">Home</a>
-              <a href="#for-school" className="text-gray-700 hover:text-gray-900 transition-colors">For school</a>
-              <a href="#for-parents" className="text-gray-700 hover:text-gray-900 transition-colors">For parents</a>
-              <a href="#about-us" className="text-gray-700 hover:text-gray-900 transition-colors">About Us</a>
+            <div className="hidden md:flex space-x-8 ml-24 items-center justify-center">
+              <a href="#home" className="text-[#003049] text-base font-normal transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>Home</a>
+              <a href="#for-school" className="text-[#003049] text-base font-normal transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>For school</a>
+              <a href="#for-parents" className="text-[#003049] text-base font-normal transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>For parents</a>
+              <a href="#about-us" className="text-[#003049] text-base font-normal transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>About Us</a>
             </div>
             {/* Get Started Button */}
             <div className="flex items-center justify-end">
-              <button className="bg-[#003049] text-white px-6 py-2 rounded-md hover:bg-blue-800 transition-colors">
+              <button className="bg-[#003049] text-white px-10 py-2 rounded-md hover:bg-blue-800 transition-colors">
                 Get Started
               </button>
             </div>
@@ -37,16 +37,16 @@ function App() {
           <div className="w-full lg:w-1/2 px-4 sm:px-6 lg:pl-8 xl:pl-16 lg:pr-12">
             <div className="max-w-2xl space-y-6">
               {/* Top Tags */}
-              <div className="flex items-center space-x-2 text-sm text-[#08A0AF]">
+              <div className="flex items-center space-x-2 font-semibold text-sm text-[#08A0AF]">
                 <span>For Schools</span>
-                <span className="text-gray-300">|</span>
+                <span className="">|</span>
                 <span>For Parents</span>
-                <span className="text-gray-300">|</span>
+                <span className="">|</span>
                 <span>For Pupils</span>
               </div>
 
               {/* Main Heading */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#003049] leading-tight">
+              <h1 className="text-[#003049] font-semibold leading-tight" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '54px', fontWeight: 600, letterSpacing: '1.08px' }}>
                 Turning what schools teach into{' '}
                 <span className="relative inline-block">
                   <span className="relative z-10">consistent,</span>
@@ -58,7 +58,7 @@ function App() {
               </h1>
 
               {/* Descriptive Paragraph */}
-              <p className="text-lg text-[#827E7E] leading-relaxed max-w-xl">
+              <p className="text-[#827E7E] font-normal leading-relaxed max-w-xl" style={{ fontFamily: 'Lato, sans-serif', fontSize: '18px', fontWeight: 400 }}>
                 LinkEDtohome is a school-aligned parent support platform that helps schools reinforce safeguarding, wellbeing, and personal development beyond the classroom without increasing staff workload.
               </p>
 
