@@ -438,7 +438,7 @@ function App() {
                 className="relative px-6 py-4 rounded-lg bg-fill bg-center bg-no-repeat min-h-[20px] flex items-center"
                 style={{ backgroundImage: 'url(/images/Main.png)' }}
               >
-                <p className="text-gray-900 ml-6 font-medium mt-20 text-md relative z-10" style={{ marginRight: '16px' }}>
+                <p className="text-gray-900 ml-6 font-medium mt-20 text-[16px] relative z-10" style={{ marginRight: '16px' }}>
                   Stronger home-school alignment
                 </p>
               </div>
@@ -448,7 +448,7 @@ function App() {
                 className="relative px-6 py-4 rounded-lg bg-fill bg-center bg-no-repeat min-h-[50px] flex items-center"
                 style={{ backgroundImage: 'url(/images/Main.png)' }}
               >
-                <p className="text-gray-900 ml-6 font-medium mt-20 text-md relative z-10">
+                <p className="text-gray-900 ml-6 font-medium mt-20 text-[16px] relative z-10">
                   Earlier intervention and support
                 </p>
               </div>
@@ -458,7 +458,7 @@ function App() {
                 className="relative px-6 py-4 rounded-lg bg-fill bg-center bg-no-repeat min-h-[50px] flex items-center"
                 style={{ backgroundImage: 'url(/images/Main.png)' }}
               >
-                <p className="text-gray-900 ml-6 font-medium mt-20 text-md relative z-10">
+                <p className="text-gray-900 ml-6 font-medium mt-20 text-[16px] relative z-10">
                   Reduced pressure on staff
                 </p>
               </div>
@@ -468,7 +468,7 @@ function App() {
                 className="relative px-6 py-4 rounded-lg bg-fill bg-center bg-no-repeat min-h-[50px] flex items-center"
                 style={{ backgroundImage: 'url(/images/Main.png)' }}
               >
-                <p className="text-gray-900 ml-6 font-medium mt-20 text-md relative z-10">
+                <p className="text-gray-900 ml-6 font-medium mt-20 text-[16px] relative z-10">
                   Clear evidence of parent engagement
                 </p>
               </div>
@@ -478,7 +478,7 @@ function App() {
                 className="relative px-6 py-4 rounded-lg bg-fill bg-center bg-no-repeat min-h-[50px] flex items-center"
                 style={{ backgroundImage: 'url(/images/Main.png)' }}
               >
-                <p className="text-gray-900 ml-6 font-medium mt-20 text-md relative z-10">
+                <p className="text-gray-900 ml-6 font-medium mt-20 text-[16px] relative z-10">
                   Consistent safeguarding and wellbeing messages
                 </p>
               </div>
@@ -488,7 +488,7 @@ function App() {
                 className="relative px-6 py-4 rounded-lg bg-fill bg-center bg-no-repeat min-h-[50px] flex items-center"
                 style={{ backgroundImage: 'url(/images/Main.png)' }}
               >
-                <p className="text-gray-900 ml-6 font-medium mt-20 text-md relative z-10">
+                <p className="text-gray-900 ml-6 font-medium mt-20 text-[16px] relative z-10">
                   Confidence at inspection and review
                 </p>
               </div>
