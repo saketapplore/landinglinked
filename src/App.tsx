@@ -515,7 +515,7 @@ function App() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-10">
             {/* Left Section - Images */}
-            <div className="w-full flex justify-center lg:justify-start">
+            <div className="w-full flex justify-center lg:justify-center">
               <img 
                 src="/images/gimages.png" 
                 alt="Family images" 
@@ -524,7 +524,7 @@ function App() {
             </div>
 
             {/* Right Section - Content */}
-            <div className="w-full space-y-[160px] ml-20">
+            <div className="w-full space-y-[160px] ml-32">
               {/* Bulleted List */}
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
