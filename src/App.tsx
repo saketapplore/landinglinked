@@ -183,6 +183,19 @@ function App() {
         </div>
       </section>
 
+      {/* What Parents See Section */}
+      <section className="bg-white pt-16 lg:pt-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center">
+            <img 
+              src="/images/whatparents.png" 
+              alt="What parents see" 
+              className="w-full max-w-3xl h-auto object-contain"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Explain It to Me Section */}
       <section className="bg-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -402,7 +415,7 @@ function App() {
 
       {/* What Schools Gain Section */}
       <section className="bg-white py-16 lg:py-12">
-        <div className="max-w-8xl mx-auto">
+        <div className="max-w-[1400px] mx-auto">
           <div className="space-y-8">
             {/* Title Section */}
             <div className="flex justify-center">
@@ -422,60 +435,60 @@ function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
               {/* Card 1 */}
               <div 
-                className="relative p-10 rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
+                className="relative p-[22px] rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
                 style={{ backgroundImage: 'url(/images/cart.png)' }}
               >
-                <p className="text-gray-900 font-medium mt-16 text-lg relative z-10">
+                <p className="text-gray-900 font-medium mt-16 text-md relative z-10" style={{ marginRight: '16px' }}>
                   Stronger home-school alignment
                 </p>
               </div>
 
               {/* Card 2 */}
               <div 
-                className="relative p-10 rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
+                className="relative p-[22px] rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
                 style={{ backgroundImage: 'url(/images/cart.png)' }}
               >
-                <p className="text-gray-900 font-medium mt-12 text-lg relative z-10">
+                <p className="text-gray-900 font-medium mt-16 text-md relative z-10">
                   Earlier intervention and support
                 </p>
               </div>
 
               {/* Card 3 */}
               <div 
-                className="relative p-10 rounded-lg bg-cover bg-center bg-no-repeat min-h-[150px] flex items-center"
+                className="relative p-[22px] rounded-lg bg-cover bg-center bg-no-repeat min-h-[150px] flex items-center"
                 style={{ backgroundImage: 'url(/images/cart.png)' }}
               >
-                <p className="text-gray-900 font-medium mt-12 text-lg relative z-10">
+                <p className="text-gray-900 font-medium mt-16 text-md relative z-10">
                   Reduced pressure on staff
                 </p>
               </div>
 
               {/* Card 4 */}
               <div 
-                className="relative p-10 rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
+                className="relative p-[26px] rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
                 style={{ backgroundImage: 'url(/images/cart.png)' }}
               >
-                <p className="text-gray-900 font-medium mt-12 text-lg relative z-10">
+                <p className="text-gray-900 font-medium mt-16 text-md relative z-10">
                   Clear evidence of parent engagement
                 </p>
               </div>
 
               {/* Card 5 */}
               <div 
-                className="relative p-10 rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
+                className="relative p-[26px] rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
                 style={{ backgroundImage: 'url(/images/cart.png)' }}
               >
-                <p className="text-gray-900 font-medium mt-12 text-lg relative z-10">
+                <p className="text-gray-900 font-medium mt-16 text-md relative z-10">
                   Consistent safeguarding and wellbeing messages
                 </p>
               </div>
 
               {/* Card 6 */}
               <div 
-                className="relative p-10 rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
+                className="relative p-[26px] rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
                 style={{ backgroundImage: 'url(/images/cart.png)' }}
               >
-                <p className="text-gray-900 font-medium mt-12 text-lg relative z-10">
+                <p className="text-gray-900 font-medium mt-16 text-md relative z-10">
                   Confidence at inspection and review
                 </p>
               </div>
@@ -500,7 +513,7 @@ function App() {
       {/* Concerns Section */}
       <section className="bg-white py-16 lg:py-24">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
+          <div className="flex flex-col lg:flex-row items-center gap-10">
             {/* Left Section - Images */}
             <div className="w-full flex justify-center lg:justify-start">
               <img 
@@ -511,29 +524,29 @@ function App() {
             </div>
 
             {/* Right Section - Content */}
-            <div className="w-full space-y-[200px] ml-20">
+            <div className="w-full space-y-[160px] ml-20">
               {/* Bulleted List */}
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-6 h-6 text-[#266055] flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span className="text-lg text-gray-700">Safeguarding concerns are increasing.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-6 h-6 text-[#266055] flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span className="text-lg text-gray-700">Parents are more anxious than ever.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-6 h-6 text-[#266055] flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span className="text-lg text-gray-700">Schools are under pressure to evidence impact beyond lessons.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-6 h-6 text-[#266055] flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span className="text-lg text-gray-700">AI is already in homes just not safely aligned to <br /> schools</span>
@@ -542,7 +555,7 @@ function App() {
 
               {/* Get Started Button */}
               <div className="pt-4">
-                <button className="bg-[#003049] text-white px-8 py-3 rounded-md hover:bg-blue-800 transition-colors font-medium">
+                <button className="bg-[#003049] text-white px-12 py-3 rounded-md hover:bg-blue-800 transition-colors font-medium">
                   Get Started
                 </button>
               </div>
@@ -572,13 +585,13 @@ function App() {
               </h2>
 
               {/* Description */}
-              <p className="text-lg text-[#827E7E] leading-relaxed">
+              <p className="text-md text-[#827E7E] leading-relaxed">
                 LinkEDtohome turns school expertise into everyday parent confidence so pupils hear the same message, wherever they are.
               </p>
 
               {/* Get Started Button */}
               <div className="pt-4">
-                <button className="bg-[#003049] text-white px-8 py-3 rounded-md hover:bg-blue-800 transition-colors font-medium">
+                <button className="bg-[#003049] text-white px-12 py-3 rounded-md hover:bg-blue-800 transition-colors font-medium">
                   Get Started
                 </button>
               </div>
@@ -619,26 +632,26 @@ function App() {
           </div>
 
           {/* Divider Line */}
-          <div className="border-t border-[#08A0AF] my-8"></div>
+          <div className="border-t border-[#003049] my-8"></div>
 
           {/* Bottom Section */}
           <div className="flex flex-col md:flex-row justify-between items-center">
             {/* Copyright */}
             <div className="mb-4 md:mb-0">
-              <p className="text-gray-700 text-sm">
+              <p style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: '14px', fontStyle: 'normal', fontWeight: 400 }}>
                 © 2025 LinkED to Home. All rights reserved.
               </p>
             </div>
 
             {/* Legal Links */}
             <div className="flex items-center gap-6">
-              <a href="#" className="text-gray-700 text-sm hover:text-[#003049] transition-colors">
+              <a href="#" className="hover:text-[#003049] transition-colors" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: '14px', fontStyle: 'normal', fontWeight: 400 }}>
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-700 text-sm hover:text-[#003049] transition-colors">
+              <a href="#" className="hover:text-[#003049] transition-colors" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: '14px', fontStyle: 'normal', fontWeight: 400 }}>
                 Terms of Service
               </a>
-              <a href="#" className="text-gray-700 text-sm hover:text-[#003049] transition-colors">
+              <a href="#" className="hover:text-[#003049] transition-colors" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: '14px', fontStyle: 'normal', fontWeight: 400 }}>
                 Cookie Policy
               </a>
             </div>
