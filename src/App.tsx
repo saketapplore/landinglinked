@@ -49,8 +49,7 @@ function App() {
               <h1 className="text-[#003049] font-semibold leading-tight" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '54px', fontWeight: 600, letterSpacing: '1.08px' }}>
                 Turning what schools teach into{' '}
                 <span className="relative inline-block">
-                  <span className="relative z-10">consistent,</span>
-                  <span className="absolute bottom-2 left-0 right-0 h-3 bg-[#FFE5D9] -z-0"></span>
+                  <img src="/images/consistent.jpg" alt="consistent" className="relative z-10 mb-3 inline-block h-[1.4em] align-middle" />
                 </span>{' '}
                 <span className="relative inline-block">
                   <span className="relative z-10">practical support at home</span>
@@ -64,7 +63,7 @@ function App() {
 
               {/* Get Started Button */}
               <div className="pt-4">
-                <button className="bg-[#003049] text-white px-8 py-3 rounded-md hover:bg-blue-800 transition-colors font-medium">
+                <button className="bg-[#003049] text-white px-10 py-3 rounded-md hover:bg-blue-800 transition-colors font-medium">
                   Get Started
                 </button>
               </div>
