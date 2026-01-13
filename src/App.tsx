@@ -551,6 +551,42 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Join LinkEDtohome Section */}
+      <section className="bg-white py-16 lg:py-24">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            {/* Left Section - Image */}
+            <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
+              <img 
+                src="/images/Visuals.png" 
+                alt="LinkEDtohome platform visual" 
+                className="w-full max-w-md h-auto object-contain"
+              />
+            </div>
+
+            {/* Right Section - Content */}
+            <div className="w-full lg:w-1/2 mr-40 space-y-6">
+              {/* Main Headline */}
+              <h2 className="text-4xl md:text-4xl font-bold text-[#003049]">
+                Join LinkEDtohome platform today!
+              </h2>
+
+              {/* Description */}
+              <p className="text-lg text-[#827E7E] leading-relaxed">
+                LinkEDtohome turns school expertise into everyday parent confidence so pupils hear the same message, wherever they are.
+              </p>
+
+              {/* Get Started Button */}
+              <div className="pt-4">
+                <button className="bg-[#003049] text-white px-8 py-3 rounded-md hover:bg-blue-800 transition-colors font-medium">
+                  Get Started
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
