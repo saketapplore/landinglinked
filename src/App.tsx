@@ -400,6 +400,157 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* What Schools Gain Section */}
+      <section className="bg-white py-16 lg:py-12">
+        <div className="max-w-8xl mx-auto">
+          <div className="space-y-8">
+            {/* Title Section */}
+            <div className="flex justify-center">
+              <img 
+                src="/images/schoolgains.png" 
+                alt="What schools gain?" 
+                className="w-full max-w-xl h-auto object-contain"
+              />
+            </div>
+
+            {/* Subtitle Paragraph */}
+            <p className="text-center text-lg text-[#827E7E]">
+              This is capacity-building, not extra work.
+            </p>
+
+            {/* Six Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+              {/* Card 1 */}
+              <div 
+                className="relative p-10 rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
+                style={{ backgroundImage: 'url(/images/cart.png)' }}
+              >
+                <p className="text-gray-900 font-medium mt-16 text-lg relative z-10">
+                  Stronger home-school alignment
+                </p>
+              </div>
+
+              {/* Card 2 */}
+              <div 
+                className="relative p-10 rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
+                style={{ backgroundImage: 'url(/images/cart.png)' }}
+              >
+                <p className="text-gray-900 font-medium mt-12 text-lg relative z-10">
+                  Earlier intervention and support
+                </p>
+              </div>
+
+              {/* Card 3 */}
+              <div 
+                className="relative p-10 rounded-lg bg-cover bg-center bg-no-repeat min-h-[150px] flex items-center"
+                style={{ backgroundImage: 'url(/images/cart.png)' }}
+              >
+                <p className="text-gray-900 font-medium mt-12 text-lg relative z-10">
+                  Reduced pressure on staff
+                </p>
+              </div>
+
+              {/* Card 4 */}
+              <div 
+                className="relative p-10 rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
+                style={{ backgroundImage: 'url(/images/cart.png)' }}
+              >
+                <p className="text-gray-900 font-medium mt-12 text-lg relative z-10">
+                  Clear evidence of parent engagement
+                </p>
+              </div>
+
+              {/* Card 5 */}
+              <div 
+                className="relative p-10 rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
+                style={{ backgroundImage: 'url(/images/cart.png)' }}
+              >
+                <p className="text-gray-900 font-medium mt-12 text-lg relative z-10">
+                  Consistent safeguarding and wellbeing messages
+                </p>
+              </div>
+
+              {/* Card 6 */}
+              <div 
+                className="relative p-10 rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
+                style={{ backgroundImage: 'url(/images/cart.png)' }}
+              >
+                <p className="text-gray-900 font-medium mt-12 text-lg relative z-10">
+                  Confidence at inspection and review
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Section */}
+      <section className="bg-white">
+        <div className="max-w-xl mx-auto">
+          <div className="flex justify-center">
+            <img 
+              src="/images/whyimage.png" 
+              alt="Why section" 
+              className="w-[200px] h-[200px] object-contain"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Concerns Section */}
+      <section className="bg-white py-16 lg:py-24">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            {/* Left Section - Images */}
+            <div className="w-full flex justify-center lg:justify-start">
+              <img 
+                src="/images/gimages.png" 
+                alt="Family images" 
+                className="w-full h-auto object-contain"
+              />
+            </div>
+
+            {/* Right Section - Content */}
+            <div className="w-full space-y-[200px] ml-20">
+              {/* Bulleted List */}
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-lg text-gray-700">Safeguarding concerns are increasing.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-lg text-gray-700">Parents are more anxious than ever.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-lg text-gray-700">Schools are under pressure to evidence impact beyond lessons.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-lg text-gray-700">AI is already in homes just not safely aligned to <br /> schools</span>
+                </li>
+              </ul>
+
+              {/* Get Started Button */}
+              <div className="pt-4">
+                <button className="bg-[#003049] text-white px-8 py-3 rounded-md hover:bg-blue-800 transition-colors font-medium">
+                  Get Started
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
