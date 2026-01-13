@@ -432,63 +432,63 @@ function App() {
             </p>
 
             {/* Six Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  mt-12">
               {/* Card 1 */}
               <div 
-                className="relative p-[22px] rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
-                style={{ backgroundImage: 'url(/images/cart.png)' }}
+                className="relative px-6 py-4 rounded-lg bg-fill bg-center bg-no-repeat min-h-[20px] flex items-center"
+                style={{ backgroundImage: 'url(/images/Main.png)' }}
               >
-                <p className="text-gray-900 font-medium mt-16 text-md relative z-10" style={{ marginRight: '16px' }}>
+                <p className="text-gray-900 ml-6 font-medium mt-20 text-md relative z-10" style={{ marginRight: '16px' }}>
                   Stronger home-school alignment
                 </p>
               </div>
 
               {/* Card 2 */}
               <div 
-                className="relative p-[22px] rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
-                style={{ backgroundImage: 'url(/images/cart.png)' }}
+                className="relative px-6 py-4 rounded-lg bg-fill bg-center bg-no-repeat min-h-[50px] flex items-center"
+                style={{ backgroundImage: 'url(/images/Main.png)' }}
               >
-                <p className="text-gray-900 font-medium mt-16 text-md relative z-10">
+                <p className="text-gray-900 ml-6 font-medium mt-20 text-md relative z-10">
                   Earlier intervention and support
                 </p>
               </div>
 
               {/* Card 3 */}
               <div 
-                className="relative p-[22px] rounded-lg bg-cover bg-center bg-no-repeat min-h-[150px] flex items-center"
-                style={{ backgroundImage: 'url(/images/cart.png)' }}
+                className="relative px-6 py-4 rounded-lg bg-fill bg-center bg-no-repeat min-h-[50px] flex items-center"
+                style={{ backgroundImage: 'url(/images/Main.png)' }}
               >
-                <p className="text-gray-900 font-medium mt-16 text-md relative z-10">
+                <p className="text-gray-900 ml-6 font-medium mt-20 text-md relative z-10">
                   Reduced pressure on staff
                 </p>
               </div>
 
               {/* Card 4 */}
               <div 
-                className="relative p-[26px] rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
-                style={{ backgroundImage: 'url(/images/cart.png)' }}
+                className="relative px-6 py-4 rounded-lg bg-fill bg-center bg-no-repeat min-h-[50px] flex items-center"
+                style={{ backgroundImage: 'url(/images/Main.png)' }}
               >
-                <p className="text-gray-900 font-medium mt-16 text-md relative z-10">
+                <p className="text-gray-900 ml-6 font-medium mt-20 text-md relative z-10">
                   Clear evidence of parent engagement
                 </p>
               </div>
 
               {/* Card 5 */}
               <div 
-                className="relative p-[26px] rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
-                style={{ backgroundImage: 'url(/images/cart.png)' }}
+                className="relative px-6 py-4 rounded-lg bg-fill bg-center bg-no-repeat min-h-[50px] flex items-center"
+                style={{ backgroundImage: 'url(/images/Main.png)' }}
               >
-                <p className="text-gray-900 font-medium mt-16 text-md relative z-10">
+                <p className="text-gray-900 ml-6 font-medium mt-20 text-md relative z-10">
                   Consistent safeguarding and wellbeing messages
                 </p>
               </div>
 
               {/* Card 6 */}
               <div 
-                className="relative p-[26px] rounded-lg bg-cover bg-center bg-no-repeat min-h-[200px] flex items-center"
-                style={{ backgroundImage: 'url(/images/cart.png)' }}
+                className="relative px-6 py-4 rounded-lg bg-fill bg-center bg-no-repeat min-h-[50px] flex items-center"
+                style={{ backgroundImage: 'url(/images/Main.png)' }}
               >
-                <p className="text-gray-900 font-medium mt-16 text-md relative z-10">
+                <p className="text-gray-900 ml-6 font-medium mt-20 text-md relative z-10">
                   Confidence at inspection and review
                 </p>
               </div>
