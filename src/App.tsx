@@ -63,7 +63,7 @@ function App() {
 
               {/* Get Started Button */}
               <div className="pt-4">
-                <button className="bg-[#003049] text-white px-10 py-3 rounded-md hover:bg-blue-800 transition-colors font-medium">
+                <button className="bg-[#003049] text-white px-12 py-3 rounded-md hover:bg-blue-800 transition-colors font-medium">
                   Get Started
                 </button>
               </div>
@@ -95,12 +95,12 @@ function App() {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl space-y-6">
             {/* Main Heading */}
-            <h2 className="text-4xl md:text-5xl font-bold text-[#003049] leading-tight">
+            <h2 className="leading-tight" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: '32px', fontStyle: 'normal', fontWeight: 700 }}>
               The reality in schools today
             </h2>
 
             {/* Descriptive Paragraph */}
-            <p className="text-lg text-[#003049] leading-relaxed">
+            <p className="leading-relaxed" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: '17px', fontStyle: 'normal', fontWeight: 500 }}>
               Schools teach vital topics. Parents want to support them. Pupils need consistent messages from the adults around them. Yet too often, the link between school and home is missing. Schools deliver high-quality PHSE and safeguarding education. Parents are expected to reinforce it often without clarity or confidence. Pupil voice is heard in school, but rarely connected to support at home. Everyone wants the same outcome. They just aren't supported to get there together.
             </p>
           </div>
@@ -108,7 +108,7 @@ function App() {
       </section>
 
       {/* New Section with linked3.png */}
-      <section className="bg-white py-16 lg:py-24">
+      <section className="bg-white py-16 lg:py-12">
         <div className="max-w-7xl mx-auto">
           <div className="relative">
             <img 
@@ -134,14 +134,14 @@ function App() {
             </div>
 
             {/* Descriptive Paragraph */}
-            <p className="text-lg text-[#827E7E] max-w-2xl mx-auto leading-relaxed">
+            <p className="max-w-3xl mx-auto" style={{ color: 'var(--Sub-text, #827E7E)', textAlign: 'center', fontFamily: 'Poppins, sans-serif', fontSize: '21px', fontStyle: 'normal', fontWeight: 500 }}>
               LinkEDtohome turns what schools teach into practical support at home. It ensures key messages around safeguarding, wellbeing, relationships, and growing up don't stop at the school gate
             </p>
 
             {/* Three-Column Feature Section */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-14 mt-16">
               {/* Schools Column */}
-              <div className="flex flex-col items-center text-center space-y-4">
+              <div className="flex flex-col items-center text-center space-y-2">
                 <div className="w-24 h-24 flex items-center justify-center">
                   <img 
                     src="/images/schoolicon.png" 
@@ -154,7 +154,7 @@ function App() {
               </div>
 
               {/* Parents Column */}
-              <div className="flex flex-col items-center text-center space-y-4">
+              <div className="flex flex-col items-center text-center space-y-2">
                 <div className="w-24 h-24 flex items-center justify-center">
                   <img 
                     src="/images/parenticon.png" 
@@ -167,7 +167,7 @@ function App() {
               </div>
 
               {/* Pupils Column */}
-              <div className="flex flex-col items-center text-center space-y-4">
+              <div className="flex flex-col items-center text-center space-y-2">
                 <div className="w-24 h-24 flex items-center justify-center">
                   <img 
                     src="/images/pupilicon.png" 
