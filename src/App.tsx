@@ -587,6 +587,65 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-white py-12">
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Top Section */}
+          <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+            {/* Logo */}
+            <div className="mb-4 md:mb-0">
+              <img 
+                src="/images/linkedlogo11.png" 
+                alt="LinkED to Home" 
+                className="h-16 object-contain"
+              />
+            </div>
+
+            {/* Social Media Icons */}
+            <div className="flex items-center gap-4">
+              <a href="#" className="rounded-full flex items-center justify-center transition-colors">
+                <img src="/images/Linkedin.png" alt="LinkedIn" className="w-8 h-8 object-contain" />
+              </a>
+              <a href="#" className="rounded-full flex items-center justify-center transition-colors">
+                <img src="/images/twitter12.png" alt="Twitter" className="w-8 h-8 object-contain" />
+              </a>
+              <a href="#" className="rounded-full flex items-center justify-center hover:bg-[#06a0af] transition-colors">
+                <img src="/images/fb12.png" alt="Facebook" className="w-8 h-8 object-contain" />
+              </a>
+              <a href="#" className="rounded-full flex items-center justify-center hover:bg-[#06a0af] transition-colors">
+                <img src="/images/insta.png" alt="Instagram" className="w-8 h-8 object-contain" />
+              </a>
+            </div>
+          </div>
+
+          {/* Divider Line */}
+          <div className="border-t border-[#08A0AF] my-8"></div>
+
+          {/* Bottom Section */}
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            {/* Copyright */}
+            <div className="mb-4 md:mb-0">
+              <p className="text-gray-700 text-sm">
+                © 2025 LinkED to Home. All rights reserved.
+              </p>
+            </div>
+
+            {/* Legal Links */}
+            <div className="flex items-center gap-6">
+              <a href="#" className="text-gray-700 text-sm hover:text-[#003049] transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-gray-700 text-sm hover:text-[#003049] transition-colors">
+                Terms of Service
+              </a>
+              <a href="#" className="text-gray-700 text-sm hover:text-[#003049] transition-colors">
+                Cookie Policy
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
