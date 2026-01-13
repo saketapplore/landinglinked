@@ -414,7 +414,7 @@ function App() {
       </section>
 
       {/* What Schools Gain Section */}
-      <section className="bg-white py-16 lg:py-12">
+      <section className="bg-white pt-16 lg:pt-16">
         <div className="max-w-[1400px] mx-auto">
           <div className="space-y-8">
             {/* Title Section */}
@@ -498,7 +498,7 @@ function App() {
       </section>
 
       {/* Why Section */}
-      <section className="bg-white">
+      <section className="bg-white pt-10 lg:pt-10">
         <div className="max-w-xl mx-auto">
           <div className="flex justify-center">
             <img 
@@ -511,7 +511,7 @@ function App() {
       </section>
 
       {/* Concerns Section */}
-      <section className="bg-white py-16 lg:py-24">
+      <section className="bg-white py-10 lg:py-4">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-10">
             {/* Left Section - Images */}
@@ -565,11 +565,11 @@ function App() {
       </section>
 
       {/* Join LinkEDtohome Section */}
-      <section className="bg-white py-16 lg:py-24">
+      <section className="bg-white pt-20 lg:pt-28">
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             {/* Left Section - Image */}
-            <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
+            <div className="w-full lg:w-1/2 flex justify-center lg:justify-center">
               <img 
                 src="/images/Visuals.png" 
                 alt="LinkEDtohome platform visual" 
@@ -578,7 +578,7 @@ function App() {
             </div>
 
             {/* Right Section - Content */}
-            <div className="w-full lg:w-1/2 mr-40 space-y-6">
+            <div className="w-full lg:w-1/2 space-y-6">
               {/* Main Headline */}
               <h2 className="text-4xl md:text-4xl font-bold text-[#003049]">
                 Join LinkEDtohome platform today!
