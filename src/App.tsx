@@ -224,7 +224,7 @@ function App() {
 
               {/* Title with Sparkle Icon */}
               <div className="flex items-center gap-3">
-                <h2 className="text-[20px] md:text-[28px] font-bold text-[#003049]">
+                <h2 className="text-[20px] md:text-[24px] font-bold text-[#003049]">
                   Explain It to Me
                 </h2>
                 
