@@ -85,7 +85,7 @@ function App() {
       <section className="relative max-w-7xl mx-auto min-h-[400px] flex items-center">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center rounded-lg"
           style={{ backgroundImage: 'url(/images/linked2.png)' }}
         >
           
@@ -224,7 +224,7 @@ function App() {
 
               {/* Title with Sparkle Icon */}
               <div className="flex items-center gap-3">
-                <h2 className="text-4xl md:text-5xl font-bold text-[#003049]">
+                <h2 className="text-[20px] md:text-[28px] font-bold text-[#003049]">
                   Explain It to Me
                 </h2>
                 
@@ -264,7 +264,7 @@ function App() {
               </div>
 
               {/* Title */}
-              <h2 className="text-4xl md:text-3xl font-bold text-[#003049]">
+              <h2 className="text-4xl md:text-[24px] font-bold text-[#003049]">
                 Personal Development in 60
               </h2>
 
@@ -321,7 +321,7 @@ function App() {
               </div>
 
               {/* Title */}
-              <h2 className="text-4xl md:text-5xl font-bold text-[#003049]">
+              <h2 className="text-4xl md:text-[24px] font-bold text-[#003049]">
                 Parent toolkit
               </h2>
 
@@ -359,7 +359,7 @@ function App() {
               </div>
 
               {/* Title */}
-              <h2 className="text-4xl md:text-5xl font-bold text-[#003049]">
+              <h2 className="text-4xl md:text-[24px] font-bold text-[#003049]">
                 Contextual safeguarding alerts
               </h2>
 
