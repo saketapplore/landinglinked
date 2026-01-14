@@ -156,7 +156,7 @@ function App() {
 
       {/* New Section with linked3.png */}
       <section className="bg-white py-8 lg:py-6">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
           <div className="relative">
             <img 
               src="/images/linked3.png" 
@@ -176,7 +176,7 @@ function App() {
               <img 
                 src="/images/linked4.png" 
                 alt="What is LinkEDtohome?" 
-                className="h-12 sm:h-16 lg:h-[80px]"
+                className="h-12 sm:h-6 lg:h-[80px]"
               />
             </div>
 
