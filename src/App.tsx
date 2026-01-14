@@ -176,7 +176,7 @@ function App() {
               <img 
                 src="/images/linked4.png" 
                 alt="What is LinkEDtohome?" 
-                className="h-12 sm:h-6 lg:h-[80px]"
+                className="h-12 sm:h-2 lg:h-[80px]"
               />
             </div>
 
@@ -235,7 +235,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
             <img 
-              src="/images/whatparents.png" 
+              src="/images/framess.png" 
               alt="What parents see" 
               className="w-full max-w-3xl h-auto object-contain"
             />
@@ -698,7 +698,7 @@ function App() {
             {/* Copyright */}
             <div className="text-center md:text-left order-2 md:order-1">
               <p style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(11px, 1.5vw, 14px)', fontStyle: 'normal', fontWeight: 400 }}>
-                © 2025 LinkED to Home. All rights reserved.
+                © 2026 LinkED to Home. All rights reserved.
               </p>
             </div>
 
