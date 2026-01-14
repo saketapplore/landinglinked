@@ -4,7 +4,7 @@ function App() {
       {/* Navigation */}
       <nav className="bg-white">
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-3 items-center h-16">
+          <div className="grid grid-cols-2 items-center h-16">
             {/* Logo */}
             <div className="flex items-center justify-start">
               <img 
@@ -13,16 +13,13 @@ function App() {
                 className="h-20 object-fill"
               />
             </div>
-            {/* Navigation Links - Centered */}
-            <div className="hidden md:flex space-x-8 ml-24 items-center justify-center">
+            {/* Navigation Links with Button */}
+            <div className="hidden md:flex space-x-[60px] items-center justify-end">
               <a href="#home" className="text-[#003049] text-base font-normal transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>Home</a>
               <a href="#for-school" className="text-[#003049] text-base font-normal transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>For school</a>
               <a href="#for-parents" className="text-[#003049] text-base font-normal transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>For parents</a>
               <a href="#about-us" className="text-[#003049] text-base font-normal transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>About Us</a>
-            </div>
-            {/* Get Started Button */}
-            <div className="flex items-center justify-end">
-              <button className="bg-[#003049] text-white px-10 py-2 rounded-md hover:bg-blue-800 transition-colors">
+              <button className="bg-[#003049] text-white px-4 sm:px-6 lg:px-10 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md hover:bg-blue-800 transition-colors"  style={{ fontFamily: 'Poppins'}}>
                 Get Started
               </button>
             </div>
@@ -31,11 +28,11 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-white py-16 lg:py-24 relative">
+      <section className="bg-white py-2 sm:py-3 lg:py-4 relative">
         <div className="flex flex-col lg:flex-row items-center">
           {/* Left Section - Text Content */}
           <div className="w-full lg:w-1/2 px-4 sm:px-6 lg:pl-8 xl:pl-16 lg:pr-12">
-            <div className="max-w-2xl space-y-6">
+            <div className="max-w-2xl space-y-2">
               {/* Top Tags */}
               <div className="flex items-center space-x-2 font-semibold text-sm text-[#08A0AF]">
                 <span>For Schools</span>
@@ -49,7 +46,7 @@ function App() {
               <h1 className="text-[#003049] font-semibold leading-tight" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '54px', fontWeight: 600, letterSpacing: '1.08px' }}>
                 Turning what schools teach into{' '}
                 <span className="relative inline-block">
-                  <img src="/images/consistent.jpg" alt="consistent" className="relative z-10 mb-3 inline-block h-[1.4em] align-middle" />
+                  <img src="/images/consistent.jpg" alt="consistent" className="relative z-10 mb-1 inline-block h-[1.4em] align-middle" />
                 </span>{' '}
                 <span className="relative inline-block">
                   <span className="relative z-10">practical support at home</span>
@@ -62,7 +59,7 @@ function App() {
               </p>
 
               {/* Get Started Button */}
-              <div className="pt-4">
+              <div className="pt-1">
                 <button className="bg-[#003049] text-white px-12 py-3 rounded-md hover:bg-blue-800 transition-colors font-medium">
                   Get Started
                 </button>
@@ -82,7 +79,7 @@ function App() {
       </section>
 
       {/* Reality Section */}
-      <section className="relative max-w-7xl mx-auto min-h-[400px] flex items-center">
+      <section className="relative max-w-7xl mx-auto min-h-[400px] mt-14 flex items-center">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center rounded-lg"
@@ -108,7 +105,7 @@ function App() {
       </section>
 
       {/* New Section with linked3.png */}
-      <section className="bg-white py-16 lg:py-12">
+      <section className="bg-white py-8 lg:py-6">
         <div className="max-w-7xl mx-auto">
           <div className="relative">
             <img 
@@ -121,8 +118,8 @@ function App() {
       </section>
 
       {/* What is LinkEDtohome Section */}
-      <section className="bg-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-white py-8 lg:py-12">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8">
             {/* Main Title with Image */}
             <div className="flex justify-center">
@@ -134,14 +131,14 @@ function App() {
             </div>
 
             {/* Descriptive Paragraph */}
-            <p className="max-w-3xl mx-auto" style={{ color: 'var(--Sub-text, #827E7E)', textAlign: 'center', fontFamily: 'Poppins, sans-serif', fontSize: '21px', fontStyle: 'normal', fontWeight: 500 }}>
+            <p className="max-w-4xl mx-auto" style={{ color: 'var(--Sub-text, #827E7E)', textAlign: 'center', fontFamily: 'Poppins, sans-serif', fontSize: '21px', fontStyle: 'normal', fontWeight: 500 }}>
               LinkEDtohome turns what schools teach into practical support at home. It ensures key messages around safeguarding, wellbeing, relationships, and growing up don't stop at the school gate
             </p>
 
             {/* Three-Column Feature Section */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-14 mt-16">
               {/* Schools Column */}
-              <div className="flex flex-col items-center text-center space-y-2">
+              <div className="flex flex-col items-center text-center">
                 <div className="w-24 h-24 flex items-center justify-center">
                   <img 
                     src="/images/schoolicon.png" 
@@ -149,12 +146,12 @@ function App() {
                     className="w-16 h-16 object-contain"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">Schools</h3>
+                <h3 style={{ color: 'var(--Black, #12141D)', textAlign: 'center', fontFamily: 'Poppins, sans-serif', fontSize: '21px', fontStyle: 'normal', fontWeight: 700 }}>Schools</h3>
                 <p className="text-gray-600">Schools set priorities</p>
               </div>
 
               {/* Parents Column */}
-              <div className="flex flex-col items-center text-center space-y-2">
+              <div className="flex flex-col items-center text-center">
                 <div className="w-24 h-24 flex items-center justify-center">
                   <img 
                     src="/images/parenticon.png" 
@@ -162,12 +159,12 @@ function App() {
                     className="w-16 h-16 object-contain"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">Parents</h3>
+                <h3 style={{ color: 'var(--Black, #12141D)', textAlign: 'center', fontFamily: 'Poppins, sans-serif', fontSize: '21px', fontStyle: 'normal', fontWeight: 700 }}>Parents</h3>
                 <p className="text-gray-600">Parents receive guidance that aligns</p>
               </div>
 
               {/* Pupils Column */}
-              <div className="flex flex-col items-center text-center space-y-2">
+              <div className="flex flex-col items-center text-center">
                 <div className="w-24 h-24 flex items-center justify-center">
                   <img 
                     src="/images/pupilicon.png" 
@@ -175,7 +172,7 @@ function App() {
                     className="w-16 h-16 object-contain"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">Pupils</h3>
+                <h3 style={{ color: 'var(--Black, #12141D)', textAlign: 'center', fontFamily: 'Poppins, sans-serif', fontSize: '21px', fontStyle: 'normal', fontWeight: 700 }}>Pupils</h3>
                 <p className="text-gray-600">Pupils experience consistency</p>
               </div>
             </div>
@@ -184,7 +181,7 @@ function App() {
       </section>
 
       {/* What Parents See Section */}
-      <section className="bg-white pt-16 lg:pt-24">
+      <section className="bg-white pt-2 lg:pt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
             <img 
@@ -197,11 +194,11 @@ function App() {
       </section>
 
       {/* Explain It to Me Section */}
-      <section className="bg-white py-16 lg:py-24">
+      <section className="bg-white py-6 lg:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             {/* Left Section - Smartphone Image */}
-            <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
+            <div className="w-full lg:w-4/7 flex justify-center ml-10 lg:justify-start">
               <img 
                 src="/images/linked5.png" 
                 alt="Explain It to Me app interface" 
@@ -210,10 +207,10 @@ function App() {
             </div>
 
             {/* Right Section - Content */}
-            <div className="w-full lg:w-1/2 space-y-6">
+            <div className="w-full lg:w-3/7 space-y-6">
               {/* Icon */}
               <div className="flex items-start">
-                <div className="w-16 h-16 bg-[#003049] rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-[#003049] rounded-full flex items-center justify-center flex-shrink-0">
                   <img 
                     src="/images/tvicon.png" 
                     alt="Presentation icon" 
@@ -224,7 +221,7 @@ function App() {
 
               {/* Title with Sparkle Icon */}
               <div className="flex items-center gap-3">
-                <h2 className="text-[20px] md:text-[24px] font-bold text-[#003049]">
+                <h2 style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: '32px', fontStyle: 'normal', fontWeight: 600 }}>
                   Explain It to Me
                 </h2>
                 
@@ -237,7 +234,7 @@ function App() {
                   alt="Sparkle icon" 
                   className="w-6 h-6 flex-shrink-0"
                 />
-                <p className="text-lg text-[#827E7E] leading-relaxed max-w-xl">
+                <p className="leading-relaxed max-w-xl" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: '18px', fontStyle: 'normal', fontWeight: 400 }}>
                   Plain-English answers to the questions parents actually ask aligned to school learning.
                 </p>
               </div>
@@ -247,7 +244,7 @@ function App() {
       </section>
 
       {/* Personal Development in 60 Section */}
-      <section className="bg-white py-16 lg:py-24">
+      <section className="bg-white py-6 lg:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             {/* Left Section - Content */}
@@ -264,7 +261,7 @@ function App() {
               </div>
 
               {/* Title */}
-              <h2 className="text-4xl md:text-[24px] font-bold text-[#003049]">
+              <h2 style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: '32px', fontStyle: 'normal', fontWeight: 600 }}>
                 Personal Development in 60
               </h2>
 
@@ -276,8 +273,8 @@ function App() {
                   alt="Sparkle icon" 
                   className="w-6 h-6 flex-shrink-0 mt-1"
                 />
-                <p className="text-lg text-[#827E7E] leading-relaxed">
-                Clear, school-aligned guidance in just 60 seconds. Turning personal development themes taught in school (such as relationships, wellbeing, online safety and growing up) into calm, practical support at home.
+                <p className="leading-relaxed" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: '18px', fontStyle: 'normal', fontWeight: 400 }}>
+                Clear, school-aligned guidance in just 60 seconds.    <br/>    Turning personal development themes taught in school (such as relationships, wellbeing, online safety and <br/> growing up) into calm, practical support at home.
                 </p>
               </div>
             </div>
@@ -295,11 +292,11 @@ function App() {
       </section>
 
       {/* Parent Toolkit Section */}
-      <section className="bg-white py-16 lg:py-24">
+      <section className="bg-white py-6 lg:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             {/* Left Section - Smartphone Image */}
-            <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
+            <div className="w-full lg:w-4/7 flex justify-center lg:justify-start">
               <img 
                 src="/images/linked7.png" 
                 alt="Parent Toolkit app interface" 
@@ -308,10 +305,10 @@ function App() {
             </div>
 
             {/* Right Section - Content */}
-            <div className="w-full lg:w-1/2 space-y-6">
+            <div className="w-full lg:w-3/7 space-y-6">
               {/* Icon */}
               <div className="flex items-start">
-                <div className="w-16 h-16 bg-[#003049] rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-[#003049] rounded-full flex items-center justify-center flex-shrink-0">
                   <img 
                     src="/images/bagicon.png" 
                     alt="Briefcase icon" 
@@ -321,7 +318,7 @@ function App() {
               </div>
 
               {/* Title */}
-              <h2 className="text-4xl md:text-[24px] font-bold text-[#003049]">
+              <h2 style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: '32px', fontStyle: 'normal', fontWeight: 600 }}>
                 Parent toolkit
               </h2>
 
@@ -332,8 +329,8 @@ function App() {
                   alt="Sparkle icon" 
                   className="w-6 h-6 flex-shrink-0 mt-1"
                 />
-                <p className="text-lg text-[#827E7E] leading-relaxed">
-                  Conversation starters, reassurance, and practical next steps without judgement. Parents don't disengage because they don't care. They disengage because they feel unsure.
+                <p className="leading-relaxed" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: '18px', fontStyle: 'normal', fontWeight: 400 }}>
+                  Conversation starters, reassurance, and practical next <br/> steps without judgement. Parents don't disengage <br/> because they don't care. They disengage because they feel unsure.
                 </p>
               </div>
             </div>
@@ -342,14 +339,14 @@ function App() {
       </section>
 
       {/* Contextual Safeguarding Alerts Section */}
-      <section className="bg-white py-16 lg:py-24">
+      <section className="bg-white py-8 lg:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             {/* Left Section - Content */}
             <div className="w-full lg:w-1/2 space-y-6">
               {/* Icon */}
               <div className="flex items-start">
-                <div className="w-16 h-16 bg-[#003049] rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-[#003049] rounded-full flex items-center justify-center flex-shrink-0">
                   <img 
                     src="/images/ringicon.png.png" 
                     alt="Ring/Bell icon" 
@@ -359,7 +356,7 @@ function App() {
               </div>
 
               {/* Title */}
-              <h2 className="text-4xl md:text-[24px] font-bold text-[#003049]">
+              <h2 style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: '32px', fontStyle: 'normal', fontWeight: 600 }}>
                 Contextual safeguarding alerts
               </h2>
 
@@ -370,7 +367,7 @@ function App() {
                   alt="Sparkle icon" 
                   className="w-6 h-6 flex-shrink-0 mt-1"
                 />
-                <p className="text-lg text-[#827E7E] leading-relaxed">
+                <p className="leading-relaxed" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: '18px', fontStyle: 'normal', fontWeight: 400 }}>
                   Timely prompts linked to school priorities and National safeguarding concerns.
                 </p>
               </div>
@@ -389,7 +386,7 @@ function App() {
       </section>
 
       {/* Grounded in Real Pupil Voice Section */}
-      <section className="bg-white py-16 lg:py-24">
+      <section className="bg-white py-4 lg:py-8">
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-4">
             {/* Title/Subtitle Section */}
@@ -400,7 +397,7 @@ function App() {
                 className="w-full max-w-xl h-auto object-contain"
               />
             </div>
-               <p className="text-center text-[22px] text-[#827E7E]">LinkEDtohome works in partnership with VotesforSchools</p>
+               <p className="text-center" style={{ color: 'var(--Sub-text, #827E7E)', fontFamily: 'Poppins, sans-serif', fontSize: '20px', fontStyle: 'normal', fontWeight: 500 }}>LinkEDtohome works in partnership with VotesforSchools</p>
             {/* This Week's Question Card Section */}
             <div className="flex justify-center">
               <img 
@@ -414,91 +411,71 @@ function App() {
       </section>
 
       {/* What Schools Gain Section */}
-      <section className="bg-white pt-16 lg:pt-16">
+      <section className="bg-white pt-4 lg:pt-8">
         <div className="max-w-[1400px] mx-auto">
-          <div className="space-y-8">
+          <div className="space-y-4">
             {/* Title Section */}
             <div className="flex justify-center">
               <img 
                 src="/images/schoolgains.png" 
                 alt="What schools gain?" 
-                className="w-full max-w-xl h-auto object-contain"
+                className="w-[400px] h-auto object-contain"
               />
             </div>
 
             {/* Subtitle Paragraph */}
-            <p className="text-center text-lg text-[#827E7E]">
+            <p
+              className="text-center"
+              style={{
+                color: 'var(--Sub-text, #827E7E)',
+                fontFamily: 'Poppins, sans-serif',
+                fontSize: '20px',
+                fontStyle: 'normal',
+                fontWeight: 500,
+              }}
+            >
               This is capacity-building, not extra work.
             </p>
 
-            {/* Six Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  mt-12">
-              {/* Card 1 */}
-              <div 
-                className="relative px-6 py-4 rounded-lg bg-fill bg-center bg-no-repeat min-h-[20px] flex items-center"
-                style={{ backgroundImage: 'url(/images/Main.png)' }}
-              >
-                <p className="text-gray-900 ml-6 font-medium mt-20 text-[16px] relative z-10" style={{ marginRight: '16px' }}>
-                  Stronger home-school alignment
-                </p>
-              </div>
-
-              {/* Card 2 */}
-              <div 
-                className="relative px-6 py-4 rounded-lg bg-fill bg-center bg-no-repeat min-h-[50px] flex items-center"
-                style={{ backgroundImage: 'url(/images/Main.png)' }}
-              >
-                <p className="text-gray-900 ml-6 font-medium mt-20 text-[16px] relative z-10">
-                  Earlier intervention and support
-                </p>
-              </div>
-
-              {/* Card 3 */}
-              <div 
-                className="relative px-6 py-4 rounded-lg bg-fill bg-center bg-no-repeat min-h-[50px] flex items-center"
-                style={{ backgroundImage: 'url(/images/Main.png)' }}
-              >
-                <p className="text-gray-900 ml-6 font-medium mt-20 text-[16px] relative z-10">
-                  Reduced pressure on staff
-                </p>
-              </div>
-
-              {/* Card 4 */}
-              <div 
-                className="relative px-6 py-4 rounded-lg bg-fill bg-center bg-no-repeat min-h-[50px] flex items-center"
-                style={{ backgroundImage: 'url(/images/Main.png)' }}
-              >
-                <p className="text-gray-900 ml-6 font-medium mt-20 text-[16px] relative z-10">
-                  Clear evidence of parent engagement
-                </p>
-              </div>
-
-              {/* Card 5 */}
-              <div 
-                className="relative px-6 py-4 rounded-lg bg-fill bg-center bg-no-repeat min-h-[50px] flex items-center"
-                style={{ backgroundImage: 'url(/images/Main.png)' }}
-              >
-                <p className="text-gray-900 ml-6 font-medium mt-20 text-[16px] relative z-10">
-                  Consistent safeguarding and wellbeing messages
-                </p>
-              </div>
-
-              {/* Card 6 */}
-              <div 
-                className="relative px-6 py-4 rounded-lg bg-fill bg-center bg-no-repeat min-h-[50px] flex items-center"
-                style={{ backgroundImage: 'url(/images/Main.png)' }}
-              >
-                <p className="text-gray-900 ml-6 font-medium mt-20 text-[16px] relative z-10">
-                  Confidence at inspection and review
-                </p>
-              </div>
+            {/* Six Images Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12">
+              <img 
+                src="/images/li.png" 
+                alt="Card 1" 
+                className="w-full h-auto object-contain"
+              />
+              <img 
+                src="/images/li1.png" 
+                alt="Card 2" 
+                className="w-full h-auto object-contain"
+              />
+              <img 
+                src="/images/li2.png" 
+                alt="Card 3" 
+                className="w-full h-auto object-contain"
+              />
+              <img 
+                src="/images/li3.png" 
+                alt="Card 4" 
+                className="w-full h-auto object-contain"
+              />
+              <img 
+                src="/images/li4.png" 
+                alt="Card 5" 
+                className="w-full h-auto object-contain"
+              />
+              <img 
+                src="/images/li5.png" 
+                alt="Card 6" 
+                className="w-full h-auto object-contain"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Why Section */}
-      <section className="bg-white pt-10 lg:pt-10">
+      <section className="bg-white">
         <div className="max-w-xl mx-auto">
           <div className="flex justify-center">
             <img 
@@ -524,32 +501,64 @@ function App() {
             </div>
 
             {/* Right Section - Content */}
-            <div className="w-full space-y-[160px] ml-32">
+            <div className="w-full space-y-[70px] ml-32">
               {/* Bulleted List */}
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-[#266055] flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-lg text-gray-700">Safeguarding concerns are increasing.</span>
+                  <img src="/images/tick-circle.png" alt="Checkmark" className="w-6 h-6 flex-shrink-0 mt-1 object-contain" />
+                  <span
+                    style={{
+                      color: '#606060',
+                      fontFamily: 'Open Sans, sans-serif',
+                      fontSize: '22px',
+                      fontStyle: 'normal',
+                      fontWeight: 600
+                    }}
+                  >
+                    Safeguarding concerns are increasing.
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-[#266055] flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-lg text-gray-700">Parents are more anxious than ever.</span>
+                  <img src="/images/tick-circle.png" alt="Checkmark" className="w-6 h-6 flex-shrink-0 mt-1 object-contain" />
+                  <span
+                    style={{
+                      color: '#606060',
+                      fontFamily: 'Open Sans, sans-serif',
+                      fontSize: '22px',
+                      fontStyle: 'normal',
+                      fontWeight: 600,
+                    }}
+                  >
+                    Parents are more anxious than ever.
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-[#266055] flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-lg text-gray-700">Schools are under pressure to evidence impact beyond lessons.</span>
+                  <img src="/images/tick-circle.png" alt="Checkmark" className="w-6 h-6 flex-shrink-0 mt-1 object-contain" />
+                  <span
+                    style={{
+                      color: '#606060',
+                      fontFamily: 'Open Sans, sans-serif',
+                      fontSize: '22px',
+                      fontStyle: 'normal',
+                      fontWeight: 600,
+                    }}
+                  >
+                    Schools are under pressure to evidence impact beyond lessons.
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-[#266055] flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-lg text-gray-700">AI is already in homes just not safely aligned to <br /> schools</span>
+                  <img src="/images/tick-circle.png" alt="Checkmark" className="w-6 h-6 flex-shrink-0 mt-1 object-contain" />
+                  <span
+                    style={{
+                      color: '#606060',
+                      fontFamily: 'Open Sans, sans-serif',
+                      fontSize: '22px',
+                      fontStyle: 'normal',
+                      fontWeight: 600,
+                    }}
+                  >
+                    AI is already in homes just not safely aligned to <br /> schools
+                  </span>
                 </li>
               </ul>
 
@@ -580,12 +589,12 @@ function App() {
             {/* Right Section - Content */}
             <div className="w-full lg:w-1/2 space-y-6">
               {/* Main Headline */}
-              <h2 className="text-4xl md:text-4xl font-bold text-[#003049]">
+              <h2 style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: '40px', fontStyle: 'normal', fontWeight: 700 }}>
                 Join LinkEDtohome platform today!
               </h2>
 
               {/* Description */}
-              <p className="text-md text-[#827E7E] leading-relaxed">
+              <p className="leading-relaxed" style={{ color: 'var(--Sub-text, #827E7E)', fontFamily: 'Poppins, sans-serif', fontSize: '17px', fontStyle: 'normal', fontWeight: 400 }}>
                 LinkEDtohome turns school expertise into everyday parent confidence so pupils hear the same message, wherever they are.
               </p>
 
