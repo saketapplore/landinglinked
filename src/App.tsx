@@ -544,7 +544,7 @@ function App() {
             {/* Left Section - Images */}
             <div className="w-full flex justify-center lg:justify-center">
               <img 
-                src="/images/gimages.png" 
+                src="/images/safe.png" 
                 alt="Family images" 
                 className="w-full max-w-md lg:max-w-none h-auto object-contain"
               />
