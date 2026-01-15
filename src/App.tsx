@@ -18,12 +18,12 @@ function App() {
               />
             </div>
             {/* Desktop Navigation Links with Button */}
-            <div className="hidden md:flex space-x-4 lg:space-x-[60px] items-center justify-end">
-              <a href="#home" className="text-[#003049] text-sm lg:text-base font-normal transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>Home</a>
-              <a href="#for-school" className="text-[#003049] text-sm lg:text-base font-normal transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>For school</a>
-              <a href="#for-parents" className="text-[#003049] text-sm lg:text-base font-normal transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>For parents</a>
-              <a href="#about-us" className="text-[#003049] text-sm lg:text-base font-normal transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>About Us</a>
-              <button className="bg-[#003049] text-white px-4 sm:px-6 lg:px-10 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md hover:bg-blue-800 transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>
+            <div className="hidden md:flex space-x-3 md:space-x-4 lg:space-x-[60px] items-center justify-end">
+              <a href="#home" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>Home</a>
+              <a href="#for-school" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>For school</a>
+              <a href="#for-parents" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>For parents</a>
+              <a href="#about-us" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>About Us</a>
+              <button className="bg-[#003049] text-white px-4 sm:px-6 lg:px-10 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md hover:bg-blue-800 transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 Get Started
               </button>
             </div>
