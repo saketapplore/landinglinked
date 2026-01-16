@@ -174,7 +174,7 @@ function App() {
             {/* Main Title with Image */}
             <div className="flex justify-center">
               <img 
-                src="/images/linked4.png" 
+                src="/images/home1.png" 
                 alt="What is LinkEDtohome?" 
                 className="h-12 sm:h-2 lg:h-[80px]"
               />
@@ -285,7 +285,7 @@ function App() {
                   className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-1"
                 />
                 <p className="leading-relaxed max-w-xl" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(14px, 2vw, 18px)', fontStyle: 'normal', fontWeight: 400 }}>
-                  Plain-English answers to the questions parents actually ask aligned to school learning.
+                  Answers to the questions parents actually ask aligned to school learning.
                 </p>
               </div>
             </div>
@@ -332,7 +332,7 @@ function App() {
             {/* Right Section - Smartphone Image */}
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
               <img 
-                src="/images/linked6.png" 
+                src="/images/pd.png" 
                 alt="Personal Development in 60 app interface" 
                 className="w-full max-w-md h-auto object-contain"
               />
