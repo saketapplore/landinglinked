@@ -26,16 +26,16 @@ function App() {
   };
 
   const items = [
-  <>
-    Many parents want to support their children but feel unsure about new <br />
-    challenges like online life, mental health, relationships, and social pressures.
-  </>,
-  "Children do best when school and home share consistent messages.",
+    <>
+      Many parents want to support their children but feel unsure about new <br />
+      challenges like online life, mental health, relationships, and social pressures.
+    </>,
+    "Children do best when school and home share consistent messages.",
 
-  <>LinkEDtohome helps schools and parents work in partnership, not under <br /> pressure.</>,
-  <>Schools bring expertise and structure; parents bring daily connection and <br /> insight.</>,
-  <>Together, we create a joined-up support system so children feel understood, <br /> safe, supported, and prepared.</>
-];
+    <>LinkEDtohome helps schools and parents work in partnership, not under <br /> pressure.</>,
+    <>Schools bring expertise and structure; parents bring daily connection and <br /> insight.</>,
+    <>Together, we create a joined-up support system so children feel understood, <br /> safe, supported, and prepared.</>
+  ];
 
 
   return (
@@ -201,27 +201,27 @@ function App() {
                     </li>
                   ))}
                 </ul> */}
-                
-                  {items.map((item, index) => (
-  <li key={index} className="flex items-start gap-2">
-    <img
-      src="/images/icoon.png"
-      alt="Arrow icon"
-      className="w-4 h-4 mt-1 object-contain flex-shrink-0"
-    />
-    <span
-      className="leading-relaxed"
-      style={{
-        color: 'var(--deep-blue, #003049)',
-        fontFamily: 'Poppins, sans-serif',
-        fontSize: '14px',
-        fontWeight: 400,
-      }}
-    >
-      {item}
-    </span>
-  </li>
-))}
+
+                {items.map((item, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <img
+                      src="/images/icoon.png"
+                      alt="Arrow icon"
+                      className="w-4 h-4 mt-1 object-contain flex-shrink-0"
+                    />
+                    <span
+                      className="leading-relaxed"
+                      style={{
+                        color: 'var(--deep-blue, #003049)',
+                        fontFamily: 'Poppins, sans-serif',
+                        fontSize: '14px',
+                        fontWeight: 400,
+                      }}
+                    >
+                      {item}
+                    </span>
+                  </li>
+                ))}
 
 
               </div>
@@ -514,7 +514,7 @@ function App() {
       {/* Meet Link Section */}
       <section
         className="py-10 sm:py-12 lg:py-16 bg-[#fff7f4] "
-        style={{  }}
+        style={{}}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center">
@@ -936,7 +936,7 @@ function App() {
 
       {/* Popup Modal */}
       {showPopup && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4">
           {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
@@ -945,7 +945,7 @@ function App() {
 
           {/* Modal Content */}
           <div
-            className="relative w-full max-w-7xl overflow-hidden p-4 sm:p-8 lg:p-12"
+            className="relative w-full max-w-7xl overflow-hidden p-2 sm:p-4 md:p-6 lg:p-12"
             style={{
               backgroundImage: 'url(/images/popup.png)',
               backgroundSize: 'cover',
@@ -955,15 +955,16 @@ function App() {
             {/* Close Button */}
             <button
               onClick={() => setShowPopup(false)}
-              className="absolute top-6 right-6 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/30 hover:bg-white/50 transition-colors"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 lg:top-6 lg:right-6 z-10 w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-full bg-white/30 hover:bg-white/50 transition-colors"
             >
-              <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
+
             {/* Grid Content Wrapper with White Background */}
-            <div className="bg-white rounded-lg max-w-5xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 min-h-[350px] p-6 overflow-hidden rounded-lg">
+            <div className="bg-white rounded-lg max-w-5xl mx-auto overflow-auto max-h-[90vh]">
+              <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[350px] p-3 sm:p-4 md:p-6 overflow-hidden rounded-lg">
                 {/* Left Side - Image */}
                 <div className="hidden md:block">
                   <img
@@ -974,34 +975,35 @@ function App() {
                 </div>
 
                 {/* Right Side - Form */}
-                <div className="flex flex-col px-6 sm:px-8 lg:px-10 bg-white">
+                <div className="flex flex-col px-3 sm:px-6 md:px-8 lg:px-10 bg-white py-2 sm:py-0">
                   {/* Form Header */}
                   <h2
-                    className="mb-2"
+                    className="mb-2 sm:mb-3"
                     style={{
                       color: '#003049',
                       fontFamily: 'Poppins, sans-serif',
-                      fontSize: 'clamp(20px, 3vw, 24px)',
-                      fontWeight: 700
+                      fontSize: 'clamp(18px, 3vw, 24px)',
+                      fontWeight: 700,
+                      lineHeight: '1.3'
                     }}
                   >
                     Be part of LinkEdtohome's Pilot Programme
                   </h2>
                   <p
-                    className="mb-6"
+                    className="mb-4 sm:mb-6"
                     style={{
                       color: '#827E7E',
                       fontFamily: 'Poppins, sans-serif',
-                      fontSize: 'clamp(13px, 2vw, 15px)',
+                      fontSize: 'clamp(12px, 2vw, 15px)',
                       fontWeight: 400,
-                      font: 'normal'
+                      lineHeight: '1.5'
                     }}
                   >
                     LinkEdtohome is officially launching in September 2026. Register your interest below to get early access and help shape the platform.
                   </p>
 
                   {/* Form */}
-                  <form onSubmit={handleSubmit} className="space-y-4 p-6 bg-[#fffdf9]">
+                  <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 p-3 sm:p-4 md:p-6 bg-[#fffdf9] rounded-lg">
                     {/* Full Name */}
                     <div>
                       <label
@@ -1010,7 +1012,7 @@ function App() {
                         style={{
                           color: '#003049',
                           fontFamily: 'Poppins, sans-serif',
-                          fontSize: '14px',
+                          fontSize: 'clamp(12px, 2vw, 14px)',
                           fontWeight: 500
                         }}
                       >
@@ -1024,10 +1026,10 @@ function App() {
                         onChange={handleInputChange}
                         placeholder="Enter your full name"
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-transparent transition-all"
+                        className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-transparent transition-all text-sm sm:text-base"
                         style={{
                           fontFamily: 'Poppins, sans-serif',
-                          fontSize: '14px'
+                          fontSize: 'clamp(13px, 2vw, 14px)'
                         }}
                       />
                     </div>
@@ -1040,7 +1042,7 @@ function App() {
                         style={{
                           color: '#003049',
                           fontFamily: 'Poppins, sans-serif',
-                          fontSize: '14px',
+                          fontSize: 'clamp(12px, 2vw, 14px)',
                           fontWeight: 500
                         }}
                       >
@@ -1054,10 +1056,10 @@ function App() {
                         onChange={handleInputChange}
                         placeholder="Enter your school name"
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-transparent transition-all"
+                        className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-transparent transition-all text-sm sm:text-base"
                         style={{
                           fontFamily: 'Poppins, sans-serif',
-                          fontSize: '14px'
+                          fontSize: 'clamp(13px, 2vw, 14px)'
                         }}
                       />
                     </div>
@@ -1070,7 +1072,7 @@ function App() {
                         style={{
                           color: '#003049',
                           fontFamily: 'Poppins, sans-serif',
-                          fontSize: '14px',
+                          fontSize: 'clamp(12px, 2vw, 14px)',
                           fontWeight: 500
                         }}
                       >
@@ -1084,10 +1086,10 @@ function App() {
                         onChange={handleInputChange}
                         placeholder="Enter your email address"
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-transparent transition-all"
+                        className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-transparent transition-all text-sm sm:text-base"
                         style={{
                           fontFamily: 'Poppins, sans-serif',
-                          fontSize: '14px'
+                          fontSize: 'clamp(13px, 2vw, 14px)'
                         }}
                       />
                     </div>
@@ -1095,10 +1097,10 @@ function App() {
                     {/* Submit Button */}
                     <button
                       type="submit"
-                      className="w-full mt-4 bg-[#173570] text-white py-3 rounded-lg hover:bg-[#00456a] transition-colors font-medium"
+                      className="w-full mt-3 sm:mt-4 bg-[#173570] text-white py-2.5 sm:py-3 rounded-lg hover:bg-[#00456a] transition-colors font-medium"
                       style={{
                         fontFamily: 'Poppins, sans-serif',
-                        fontSize: '16px'
+                        fontSize: 'clamp(14px, 2vw, 16px)'
                       }}
                     >
                       Submit
