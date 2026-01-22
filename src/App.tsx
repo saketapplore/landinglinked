@@ -17,12 +17,31 @@ function App() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Add your form submission logic here
-    setShowPopup(false);
-    setFormData({ fullName: '', schoolName: '', email: '' });
+
+    try {
+      const response = await fetch('http://localhost:5000/api/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('Thank you for your interest! We will get in touch soon.');
+        setShowPopup(false);
+        setFormData({ fullName: '', schoolName: '', email: '' });
+      } else {
+        const errorData = await response.json();
+        alert(`Failed to submit: ${errorData.message || 'Unknown error'}`);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('There was an error submitting the form. Please try again later.');
+    }
   };
 
   const items = [
