@@ -35,7 +35,7 @@ app.post('/api/submit-form', async (req, res) => {
   const mailOptions = {
     from: process.env.SMTP_FROM?.trim(),
     to: 'saket.kakkar@applore.in',
-    subject: `New Registration: ${fullName}`,
+    subject: `Test subject`,
     text: `
       New registration received:
       
@@ -57,6 +57,8 @@ app.post('/api/submit-form', async (req, res) => {
 
   try {
     await transporter.sendMail(mailOptions);
+
+    console.log("Email sent successfully", mailOptions);
     res.status(200).json({ message: 'Email sent successfully' });
   } catch (error) {
     console.error('Error sending email:', error);
