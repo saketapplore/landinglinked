@@ -2,6 +2,41 @@ import { useState } from 'react';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [formData, setFormData] = useState({
+    fullName: '',
+    schoolName: '',
+    email: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    // Add your form submission logic here
+    setShowPopup(false);
+    setFormData({ fullName: '', schoolName: '', email: '' });
+  };
+
+  const items = [
+  <>
+    Many parents want to support their children but feel unsure about new <br />
+    challenges like online life, mental health, relationships, and social pressures.
+  </>,
+  "Children do best when school and home share consistent messages.",
+
+  <>LinkEDtohome helps schools and parents work in partnership, not under <br /> pressure.</>,
+  <>Schools bring expertise and structure; parents bring daily connection and <br /> insight.</>,
+  <>Together, we create a joined-up support system so children feel understood, <br /> safe, supported, and prepared.</>
+];
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -11,9 +46,9 @@ function App() {
           <div className="grid grid-cols-2 items-center h-12 sm:h-16">
             {/* Logo */}
             <div className="flex items-center justify-start">
-              <img 
-                src="/images/linkedlogo11.png" 
-                alt="LinkED to home" 
+              <img
+                src="/images/linkedlogo11.png"
+                alt="LinkED to home"
                 className="h-12 sm:h-16 lg:h-20 object-fill"
               />
             </div>
@@ -23,7 +58,7 @@ function App() {
               <a href="#for-school" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>For school</a>
               <a href="#for-parents" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>For parents</a>
               <a href="#about-us" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>About Us</a>
-              <button className="bg-[#003049] text-white px-4 sm:px-6 lg:px-10 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md hover:bg-blue-800 transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>
+              <button onClick={() => setShowPopup(true)} className="bg-[#003049] text-white px-4 sm:px-6 lg:px-10 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md hover:bg-blue-800 transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 Get Started
               </button>
             </div>
@@ -55,7 +90,7 @@ function App() {
                 <a href="#for-parents" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>For parents</a>
                 <a href="#about-us" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>About Us</a>
                 <div className="px-4 pt-2">
-                  <button className="bg-[#003049] text-white w-full px-6 py-2.5 rounded-md hover:bg-blue-800 transition-colors text-sm font-medium" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>
+                  <button className="bg-[#003049] text-white w-full px-6 py-2.5 rounded-md hover:bg-blue-800 transition-colors text-sm font-medium" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => { setMobileMenuOpen(false); setShowPopup(true); }}>
                     Get Started
                   </button>
                 </div>
@@ -98,7 +133,7 @@ function App() {
 
               {/* Get Started Button */}
               <div className="pt-2 sm:pt-4">
-                <button className="bg-[#003049] text-white px-6 sm:px-10 lg:px-12 py-2 sm:py-3 text-sm sm:text-base rounded-md hover:bg-blue-800 transition-colors font-medium">
+                <button onClick={() => setShowPopup(true)} className="bg-[#003049] text-white px-6 sm:px-10 lg:px-12 py-2 sm:py-3 text-sm sm:text-base rounded-md hover:bg-blue-800 transition-colors font-medium">
                   Get Started
                 </button>
               </div>
@@ -107,9 +142,9 @@ function App() {
 
           {/* Right Section - Image (Full Width) */}
           <div className="w-full lg:w-1/2 relative mt-6 lg:mt-0">
-            <img 
-              src="/images/linked1.png" 
-              alt="Family reading together" 
+            <img
+              src="/images/linked1.png"
+              alt="Family reading together"
               className="w-full h-full object-cover"
             />
           </div>
@@ -120,9 +155,9 @@ function App() {
       <section className="relative max-w-7xl mx-auto mt-8 sm:mt-12 lg:mt-14">
         {/* Mobile: Show only links.png image */}
         <div className="md:hidden px-4">
-          <img 
-            src="/images/links.png" 
-            alt="Reality section" 
+          <img
+            src="/images/realitty.png"
+            alt="Reality section"
             className="w-full h-auto object-contain rounded-lg"
           />
         </div>
@@ -130,11 +165,11 @@ function App() {
         {/* Desktop: Show background with text overlay */}
         <div className="hidden md:flex items-center min-h-[300px] lg:min-h-[400px] px-4 sm:px-6">
           {/* Background Image */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center rounded-lg mx-4 sm:mx-6 lg:mx-0"
-            style={{ backgroundImage: 'url(/images/linked2.png)' }}
+          <div
+            className="absolute inset-0 bg-no-repeat bg-center rounded-lg mx-4 sm:mx-6 lg:mx-0"
+            style={{ backgroundImage: 'url(/images/linked2.png)', backgroundSize: '100% 100%' }}
           >
-            
+
           </div>
 
           {/* Text Content Overlay */}
@@ -146,9 +181,50 @@ function App() {
               </h2>
 
               {/* Descriptive Paragraph */}
-              <p className="leading-relaxed" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(14px, 2vw, 17px)', fontStyle: 'normal', fontWeight: 500 }}>
-                Schools teach vital topics. Parents want to support them. Pupils need consistent messages from the adults around them. Yet too often, the link between school and home is missing. Schools deliver high-quality PHSE and safeguarding education. Parents are expected to reinforce it often without clarity or confidence. Pupil voice is heard in school, but rarely connected to support at home. Everyone wants the same outcome. They just aren't supported to get there together.
-              </p>
+              <div className="space-y-4">
+                <p className="leading-relaxed" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(14px, 2vw, 17px)', fontStyle: 'normal', fontWeight: 600 }}>
+                  Schools deliver vital PSHE, safeguarding, and wellbeing education in a fast-changing world.
+                </p>
+                {/* <ul className="space-y-3">
+                  {[
+                    "Many parents want to support their children but feel unsure about new challenges like online life, mental health, relationships, and social pressures.",
+                    "Children do best when school and home share consistent messages.",
+                    "LinkEDtohome helps schools and parents work in partnership, not under pressure.",
+                    "Schools bring expertise and structure; parents bring daily connection and insight.",
+                    "Together, we create a joined-up support system so children feel understood, safe, supported, and prepared."
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <img src="/images/icoon.png" alt="Arrow icon" className="w-4 h-4 mt-1 object-contain flex-shrink-0" />
+                      <span className="leading-relaxed " style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: '14px', fontStyle: 'normal', fontWeight: 400 }}>
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul> */}
+                
+                  {items.map((item, index) => (
+  <li key={index} className="flex items-start gap-2">
+    <img
+      src="/images/icoon.png"
+      alt="Arrow icon"
+      className="w-4 h-4 mt-1 object-contain flex-shrink-0"
+    />
+    <span
+      className="leading-relaxed"
+      style={{
+        color: 'var(--deep-blue, #003049)',
+        fontFamily: 'Poppins, sans-serif',
+        fontSize: '14px',
+        fontWeight: 400,
+      }}
+    >
+      {item}
+    </span>
+  </li>
+))}
+
+
+              </div>
             </div>
           </div>
         </div>
@@ -158,9 +234,9 @@ function App() {
       <section className="bg-white py-8 lg:py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
           <div className="relative">
-            <img 
-              src="/images/linked3.png" 
-              alt="Content section" 
+            <img
+              src="/images/linked3.png"
+              alt="Content section"
               className="w-full h-auto object-contain"
             />
           </div>
@@ -173,9 +249,9 @@ function App() {
           <div className="text-center space-y-6 sm:space-y-8">
             {/* Main Title with Image */}
             <div className="flex justify-center">
-              <img 
-                src="/images/home1.png" 
-                alt="What is LinkEDtohome?" 
+              <img
+                src="/images/home1.png"
+                alt="What is LinkEDtohome?"
                 className="h-12 sm:h-2 lg:h-[80px]"
               />
             </div>
@@ -190,9 +266,9 @@ function App() {
               {/* Schools Column */}
               <div className="flex flex-col items-center text-center">
                 <div className="w-24 h-24 flex items-center justify-center">
-                  <img 
-                    src="/images/schoolicon.png" 
-                    alt="Schools icon" 
+                  <img
+                    src="/images/schoolicon.png"
+                    alt="Schools icon"
                     className="w-16 h-16 object-contain"
                   />
                 </div>
@@ -203,9 +279,9 @@ function App() {
               {/* Parents Column */}
               <div className="flex flex-col items-center text-center">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center">
-                  <img 
-                    src="/images/parenticon.png" 
-                    alt="Parents icon" 
+                  <img
+                    src="/images/parenticon.png"
+                    alt="Parents icon"
                     className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
                   />
                 </div>
@@ -216,9 +292,9 @@ function App() {
               {/* Pupils Column */}
               <div className="flex flex-col items-center text-center">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center">
-                  <img 
-                    src="/images/pupilicon.png" 
-                    alt="Pupils icon" 
+                  <img
+                    src="/images/pupilicon.png"
+                    alt="Pupils icon"
                     className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
                   />
                 </div>
@@ -234,9 +310,9 @@ function App() {
       <section id="for-parents" className="bg-white pt-6 sm:pt-8 lg:pt-8 pb-6 sm:pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
-            <img 
-              src="/images/framess.png" 
-              alt="What parents see" 
+            <img
+              src="/images/framess.png"
+              alt="What parents see"
               className="w-full max-w-3xl h-auto object-contain"
             />
           </div>
@@ -249,9 +325,9 @@ function App() {
           <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12">
             {/* Left Section - Smartphone Image */}
             <div className="w-full lg:w-4/7 flex justify-center lg:justify-start">
-              <img 
-                src="/images/linked5.png" 
-                alt="Explain It to Me app interface" 
+              <img
+                src="/images/linked5.png"
+                alt="Explain It to Me app interface"
                 className="w-full max-w-md h-auto object-contain"
               />
             </div>
@@ -261,9 +337,9 @@ function App() {
               {/* Icon */}
               <div className="flex items-start">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#003049] rounded-full flex items-center justify-center flex-shrink-0">
-                  <img 
-                    src="/images/tvicon.png" 
-                    alt="Presentation icon" 
+                  <img
+                    src="/images/tvicon.png"
+                    alt="Presentation icon"
                     className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
                   />
                 </div>
@@ -274,14 +350,14 @@ function App() {
                 <h2 style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(24px, 3vw, 32px)', fontStyle: 'normal', fontWeight: 600 }}>
                   Explain It to Me
                 </h2>
-                
+
               </div>
 
               {/* Tagline */}
               <div className="flex items-start gap-3">
-                <img 
-                  src="/images/staricon.png" 
-                  alt="Sparkle icon" 
+                <img
+                  src="/images/staricon.png"
+                  alt="Sparkle icon"
                   className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-1"
                 />
                 <p className="leading-relaxed max-w-xl" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(14px, 2vw, 18px)', fontStyle: 'normal', fontWeight: 400 }}>
@@ -302,9 +378,9 @@ function App() {
               {/* Icon */}
               <div className="flex items-start">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <img 
-                    src="/images/galleryicon.png" 
-                    alt="Gallery icon" 
+                  <img
+                    src="/images/galleryicon.png"
+                    alt="Gallery icon"
                     className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
                   />
                 </div>
@@ -315,25 +391,25 @@ function App() {
                 Personal Development in 60
               </h2>
 
-            
+
               {/* Second Paragraph with Sparkle Icon */}
               <div className="flex items-start gap-3">
-                <img 
-                  src="/images/staricon.png" 
-                  alt="Sparkle icon" 
+                <img
+                  src="/images/staricon.png"
+                  alt="Sparkle icon"
                   className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-1"
                 />
                 <p className="leading-relaxed" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(14px, 2vw, 18px)', fontStyle: 'normal', fontWeight: 400 }}>
-                Clear, school-aligned guidance in just 60 seconds. Turning personal development themes taught in school (such as relationships, wellbeing, online safety and growing up) into calm, practical support at home.
+                  Clear, school-aligned guidance in just 60 seconds. Turning personal development themes taught in school (such as relationships, wellbeing, online safety and growing up) into calm, practical support at home.
                 </p>
               </div>
             </div>
 
             {/* Right Section - Smartphone Image */}
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-              <img 
-                src="/images/pd.png" 
-                alt="Personal Development in 60 app interface" 
+              <img
+                src="/images/pd.png"
+                alt="Personal Development in 60 app interface"
                 className="w-full max-w-md h-auto object-contain"
               />
             </div>
@@ -347,9 +423,9 @@ function App() {
           <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12">
             {/* Left Section - Smartphone Image */}
             <div className="w-full lg:w-4/7 flex justify-center lg:justify-start">
-              <img 
-                src="/images/linked7.png" 
-                alt="Parent Toolkit app interface" 
+              <img
+                src="/images/linked7.png"
+                alt="Parent Toolkit app interface"
                 className="w-full max-w-md h-auto object-contain"
               />
             </div>
@@ -359,9 +435,9 @@ function App() {
               {/* Icon */}
               <div className="flex items-start">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#003049] rounded-full flex items-center justify-center flex-shrink-0">
-                  <img 
-                    src="/images/bagicon.png" 
-                    alt="Briefcase icon" 
+                  <img
+                    src="/images/bagicon.png"
+                    alt="Briefcase icon"
                     className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
                   />
                 </div>
@@ -374,9 +450,9 @@ function App() {
 
               {/* Paragraph with Sparkle Icon */}
               <div className="flex items-start gap-3">
-                <img 
-                  src="/images/staricon.png" 
-                  alt="Sparkle icon" 
+                <img
+                  src="/images/staricon.png"
+                  alt="Sparkle icon"
                   className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-1"
                 />
                 <p className="leading-relaxed" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(14px, 2vw, 18px)', fontStyle: 'normal', fontWeight: 400 }}>
@@ -397,9 +473,9 @@ function App() {
               {/* Icon */}
               <div className="flex items-start">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#003049] rounded-full flex items-center justify-center flex-shrink-0">
-                  <img 
-                    src="/images/ringicon.png.png" 
-                    alt="Ring/Bell icon" 
+                  <img
+                    src="/images/ringicon.png.png"
+                    alt="Ring/Bell icon"
                     className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
                   />
                 </div>
@@ -412,9 +488,9 @@ function App() {
 
               {/* Paragraph with Sparkle Icon */}
               <div className="flex items-start gap-3">
-                <img 
-                  src="/images/staricon.png" 
-                  alt="Sparkle icon" 
+                <img
+                  src="/images/staricon.png"
+                  alt="Sparkle icon"
                   className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-1"
                 />
                 <p className="leading-relaxed" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(14px, 2vw, 18px)', fontStyle: 'normal', fontWeight: 400 }}>
@@ -425,10 +501,150 @@ function App() {
 
             {/* Right Section - Smartphone Image */}
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-              <img 
-                src="/images/linked8.png" 
-                alt="Contextual safeguarding alerts app interface" 
+              <img
+                src="/images/linked8.png"
+                alt="Contextual safeguarding alerts app interface"
                 className="w-full max-w-md h-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Meet Link Section */}
+      <section
+        className="py-10 sm:py-12 lg:py-16 bg-[#fff7f4] "
+        style={{  }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center">
+            {/* Left Section - Content */}
+            <div className="w-full lg:w-2/3">
+              <div className="max-w-full space-y-5 sm:space-y-6">
+                <div className="flex items-start">
+                  <img
+                    src="/images/meet.png"
+                    alt="Meet Link"
+                    className="h-10 sm:h-12 lg:h-14 w-auto object-contain"
+                  />
+                </div>
+
+                <p
+                  className="leading-relaxed"
+                  style={{
+                    color: 'var(--Black, #12141D)',
+                    fontFamily: 'Poppins, sans-serif',
+                    fontSize: '16px',
+                    fontStyle: 'normal',
+                    fontWeight: 400,
+                  }}
+                >
+                  Link is an AI-powered parent support guide trained on UK PSHE and safeguarding <br /> content.
+                </p>
+
+                <p
+                  className="leading-relaxed"
+                  style={{
+                    color: 'var(--Black, #12141D)',
+                    fontFamily: 'Poppins, sans-serif',
+                    fontSize: '16px',
+                    fontStyle: 'normal',
+                    fontWeight: 400,
+                  }}
+                >
+                  Parents can ask real questions, in real language, and receive:
+                </p>
+
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <img
+                      src="/images/tick.png"
+                      alt="Tick"
+                      className="w-3 h-3 sm:w-6 sm:h-6 flex-shrink-0"
+                    />
+                    <span
+                      style={{
+                        color: 'var(--deep-blue, #003049)',
+                        fontFamily: 'Poppins, sans-serif',
+                        fontSize: '16px',
+                        fontStyle: 'normal',
+                        fontWeight: 600,
+                      }}
+                    >
+                      Age-appropriate explanations aligned to what schools teach
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <img
+                      src="/images/tick.png"
+                      alt="Tick"
+                      className="w-3 h-3 sm:w-6 sm:h-6 flex-shrink-0"
+                    />
+                    <span
+                      style={{
+                        color: 'var(--deep-blue, #003049)',
+                        fontFamily: 'Poppins, sans-serif',
+                        fontSize: '16px',
+                        fontStyle: 'normal',
+                        fontWeight: 600,
+                      }}
+                    >
+                      Safeguarding-aware responses with clear next steps
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <img
+                      src="/images/tick.png"
+                      alt="Tick"
+                      className="w-3 h-3 sm:w-6 sm:h-6 flex-shrink-0"
+                    />
+                    <span
+                      style={{
+                        color: 'var(--deep-blue, #003049)',
+                        fontFamily: 'Poppins, sans-serif',
+                        fontSize: '16px',
+                        fontStyle: 'normal',
+                        fontWeight: 600,
+                      }}
+                    >
+                      Calm, practical guidance — without judgement
+                    </span>
+                  </li>
+                </ul>
+
+                <p
+                  className="leading-relaxed"
+                  style={{
+                    color: 'var(--Black, #12141D)',
+                    fontFamily: 'Poppins, sans-serif',
+                    fontSize: '16px',
+                    fontStyle: 'normal',
+                    fontWeight: 400,
+                  }}
+                >
+                  Link scales school expertise without replacing professional judgement.
+                </p>
+
+                <p
+                  style={{
+                    color: 'var(--deep-blue, #003049)',
+                    fontFamily: 'Poppins, sans-serif',
+                    fontSize: '16px',
+                    fontStyle: 'normal',
+                    fontWeight: 600,
+                  }}
+                >
+                  Schools stay in control. Safeguarding stays safe.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Section - Image */}
+            <div className="w-full lg:w-1/3 flex h-[600px] justify-start lg:justify-start">
+              <img
+                src="/images/aibots.png"
+                alt="Meet Link feature"
+                className="w-full max-w-md sm:max-w-lg lg:max-w-xl h-auto object-contain"
               />
             </div>
           </div>
@@ -441,18 +657,18 @@ function App() {
           <div className="space-y-4 sm:space-y-6">
             {/* Title/Subtitle Section */}
             <div className="flex justify-center">
-              <img 
-                src="/images/grounded.png" 
-                alt="Grounded in real pupil voice" 
+              <img
+                src="/images/grounded.png"
+                alt="Grounded in real pupil voice"
                 className="w-full max-w-xl h-auto object-contain"
               />
             </div>
-               <p className="text-center px-4" style={{ color: 'var(--Sub-text, #827E7E)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(16px, 2.5vw, 20px)', fontStyle: 'normal', fontWeight: 500 }}>LinkEDtohome works in partnership with VotesforSchools</p>
+            <p className="text-center px-4" style={{ color: 'var(--Sub-text, #827E7E)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(16px, 2.5vw, 20px)', fontStyle: 'normal', fontWeight: 500 }}>LinkEDtohome works in partnership with VotesforSchools</p>
             {/* This Week's Question Card Section */}
             <div className="flex justify-center">
-              <img 
-                src="/images/thisweek.png" 
-                alt="This Week's Question poll card" 
+              <img
+                src="/images/thisweek.png"
+                alt="This Week's Question poll card"
                 className="w-full max-w-8xl h-auto object-fill"
               />
             </div>
@@ -466,9 +682,9 @@ function App() {
           <div className="space-y-4 sm:space-y-6">
             {/* Title Section */}
             <div className="flex justify-center">
-              <img 
-                src="/images/schoolgains.png" 
-                alt="What schools gain?" 
+              <img
+                src="/images/schoolgains.png"
+                alt="What schools gain?"
                 className="w-full max-w-[300px] sm:max-w-[350px] lg:w-[400px] h-auto object-contain"
               />
             </div>
@@ -489,34 +705,34 @@ function App() {
 
             {/* Six Images Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-6 sm:mt-8 lg:mt-12">
-              <img 
-                src="/images/li.png" 
-                alt="Card 1" 
+              <img
+                src="/images/li.png"
+                alt="Card 1"
                 className="w-full h-auto object-contain transition-all duration-300 hover:scale-105 cursor-pointer"
               />
-              <img 
-                src="/images/li1.png" 
-                alt="Card 2" 
+              <img
+                src="/images/li1.png"
+                alt="Card 2"
                 className="w-full h-auto object-contain transition-all duration-300 hover:scale-105 cursor-pointer"
               />
-              <img 
-                src="/images/li2.png" 
-                alt="Card 3" 
+              <img
+                src="/images/li2.png"
+                alt="Card 3"
                 className="w-full h-auto object-contain transition-all duration-300 hover:scale-105 cursor-pointer"
               />
-              <img 
-                src="/images/li3.png" 
-                alt="Card 4" 
+              <img
+                src="/images/li3.png"
+                alt="Card 4"
                 className="w-full h-auto object-contain transition-all duration-300 hover:scale-105 cursor-pointer"
               />
-              <img 
-                src="/images/li4.png" 
-                alt="Card 5" 
+              <img
+                src="/images/li4.png"
+                alt="Card 5"
                 className="w-full h-auto object-contain transition-all duration-300 hover:scale-105 cursor-pointer"
               />
-              <img 
-                src="/images/li5.png" 
-                alt="Card 6" 
+              <img
+                src="/images/li5.png"
+                alt="Card 6"
                 className="w-full h-auto object-contain transition-all duration-300 hover:scale-105 cursor-pointer"
               />
             </div>
@@ -528,9 +744,9 @@ function App() {
       <section className="bg-white py-1 sm:py-8">
         <div className="max-w-xl mx-auto px-4">
           <div className="flex justify-center">
-            <img 
-              src="/images/whyimage.png" 
-              alt="Why section" 
+            <img
+              src="/images/whyimage.png"
+              alt="Why section"
               className="w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] lg:w-[200px] lg:h-[200px] object-contain"
             />
           </div>
@@ -543,15 +759,15 @@ function App() {
           <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10">
             {/* Left Section - Images */}
             <div className="w-full flex justify-center lg:justify-center">
-              <img 
-                src="/images/safe.png" 
-                alt="Family images" 
+              <img
+                src="/images/safe.png"
+                alt="Family images"
                 className="w-full max-w-md lg:max-w-none h-auto object-contain"
               />
             </div>
 
             {/* Right Section - Content */}
-            <div className="w-full space-y-6 sm:space-y-8 lg:space-y-[70px] lg:ml-8 xl:ml-32">
+            <div className="w-full space-y-6 sm:space-y-8 lg:space-y-[10px] lg:ml-8 xl:ml-32">
               {/* Bulleted List */}
               <ul className="space-y-3 sm:space-y-4">
                 <li className="flex items-start gap-3">
@@ -614,7 +830,7 @@ function App() {
 
               {/* Get Started Button */}
               <div className="pt-2 sm:pt-4">
-                <button className="bg-[#003049] text-white px-8 sm:px-10 lg:px-12 py-2.5 sm:py-3 text-sm sm:text-base rounded-md hover:bg-blue-800 transition-colors font-medium">
+                <button onClick={() => setShowPopup(true)} className="bg-[#003049] text-white px-8 sm:px-10 lg:px-12 py-2.5 sm:py-3 text-sm sm:text-base rounded-md hover:bg-blue-800 transition-colors font-medium">
                   Get Started
                 </button>
               </div>
@@ -629,9 +845,9 @@ function App() {
           <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12">
             {/* Left Section - Image */}
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-center">
-              <img 
-                src="/images/Visuals.png" 
-                alt="LinkEDtohome platform visual" 
+              <img
+                src="/images/Visuals.png"
+                alt="LinkEDtohome platform visual"
                 className="w-full max-w-md h-auto object-contain"
               />
             </div>
@@ -650,7 +866,7 @@ function App() {
 
               {/* Get Started Button */}
               <div className="pt-2 sm:pt-4">
-                <button className="bg-[#003049] text-white px-8 sm:px-10 lg:px-12 py-2.5 sm:py-3 text-sm sm:text-base rounded-md hover:bg-blue-800 transition-colors font-medium">
+                <button onClick={() => setShowPopup(true)} className="bg-[#003049] text-white px-8 sm:px-10 lg:px-12 py-2.5 sm:py-3 text-sm sm:text-base rounded-md hover:bg-blue-800 transition-colors font-medium">
                   Get Started
                 </button>
               </div>
@@ -666,25 +882,25 @@ function App() {
           <div className="flex flex-col md:flex-row justify-between items-center mb-6 sm:mb-8 gap-4">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <img 
-                src="/images/linkedlogo11.png" 
-                alt="LinkED to Home" 
+              <img
+                src="/images/linkedlogo11.png"
+                alt="LinkED to Home"
                 className="h-10 sm:h-12 lg:h-16 object-contain"
               />
             </div>
 
             {/* Social Media Icons */}
             <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
-              <a href="#" className="rounded-full flex items-center justify-center transition-colors">
+              <a href="https://www.linkedin.com/in/linked-tohome-95a93938b/" className="rounded-full flex items-center justify-center transition-colors">
                 <img src="/images/Linkedin.png" alt="LinkedIn" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
               </a>
-              <a href="#" className="rounded-full flex items-center justify-center transition-colors">
+              {/* <a href="#" className="rounded-full flex items-center justify-center transition-colors">
                 <img src="/images/twitter12.png" alt="Twitter" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
               </a>
               <a href="#" className="rounded-full flex items-center justify-center hover:bg-[#06a0af] transition-colors">
                 <img src="/images/fb12.png" alt="Facebook" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
-              </a>
-              <a href="#" className="rounded-full flex items-center justify-center hover:bg-[#06a0af] transition-colors">
+              </a> */}
+              <a href="https://www.instagram.com/linkedtohome/" className="rounded-full flex items-center justify-center hover:bg-[#06a0af] transition-colors">
                 <img src="/images/insta.png" alt="Instagram" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
               </a>
             </div>
@@ -717,8 +933,186 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {/* Popup Modal */}
+      {showPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={() => setShowPopup(false)}
+          />
+
+          {/* Modal Content */}
+          <div
+            className="relative w-full max-w-7xl overflow-hidden p-4 sm:p-8 lg:p-12"
+            style={{
+              backgroundImage: 'url(/images/popup.png)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setShowPopup(false)}
+              className="absolute top-6 right-6 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/30 hover:bg-white/50 transition-colors"
+            >
+              <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            {/* Grid Content Wrapper with White Background */}
+            <div className="bg-white rounded-lg max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 min-h-[350px] p-6 overflow-hidden rounded-lg">
+                {/* Left Side - Image */}
+                <div className="hidden md:block">
+                  <img
+                    src="/images/parentss.png"
+                    alt="Family"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Right Side - Form */}
+                <div className="flex flex-col px-6 sm:px-8 lg:px-10 bg-white">
+                  {/* Form Header */}
+                  <h2
+                    className="mb-2"
+                    style={{
+                      color: '#003049',
+                      fontFamily: 'Poppins, sans-serif',
+                      fontSize: 'clamp(20px, 3vw, 24px)',
+                      fontWeight: 700
+                    }}
+                  >
+                    Be part of LinkEdtohome's Pilot Programme
+                  </h2>
+                  <p
+                    className="mb-6"
+                    style={{
+                      color: '#827E7E',
+                      fontFamily: 'Poppins, sans-serif',
+                      fontSize: 'clamp(13px, 2vw, 15px)',
+                      fontWeight: 400,
+                      font: 'normal'
+                    }}
+                  >
+                    LinkEdtohome is officially launching in September 2026. Register your interest below to get early access and help shape the platform.
+                  </p>
+
+                  {/* Form */}
+                  <form onSubmit={handleSubmit} className="space-y-4 p-6 bg-[#fffdf9]">
+                    {/* Full Name */}
+                    <div>
+                      <label
+                        htmlFor="fullName"
+                        className="block mb-1.5"
+                        style={{
+                          color: '#003049',
+                          fontFamily: 'Poppins, sans-serif',
+                          fontSize: '14px',
+                          fontWeight: 500
+                        }}
+                      >
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleInputChange}
+                        placeholder="Enter your full name"
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-transparent transition-all"
+                        style={{
+                          fontFamily: 'Poppins, sans-serif',
+                          fontSize: '14px'
+                        }}
+                      />
+                    </div>
+
+                    {/* School / Institution Name */}
+                    <div>
+                      <label
+                        htmlFor="schoolName"
+                        className="block mb-1.5"
+                        style={{
+                          color: '#003049',
+                          fontFamily: 'Poppins, sans-serif',
+                          fontSize: '14px',
+                          fontWeight: 500
+                        }}
+                      >
+                        School / Institution Name
+                      </label>
+                      <input
+                        type="text"
+                        id="schoolName"
+                        name="schoolName"
+                        value={formData.schoolName}
+                        onChange={handleInputChange}
+                        placeholder="Enter your school name"
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-transparent transition-all"
+                        style={{
+                          fontFamily: 'Poppins, sans-serif',
+                          fontSize: '14px'
+                        }}
+                      />
+                    </div>
+
+                    {/* Email Address */}
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="block mb-1.5"
+                        style={{
+                          color: '#003049',
+                          fontFamily: 'Poppins, sans-serif',
+                          fontSize: '14px',
+                          fontWeight: 500
+                        }}
+                      >
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder="Enter your email address"
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-transparent transition-all"
+                        style={{
+                          fontFamily: 'Poppins, sans-serif',
+                          fontSize: '14px'
+                        }}
+                      />
+                    </div>
+
+                    {/* Submit Button */}
+                    <button
+                      type="submit"
+                      className="w-full mt-4 bg-[#173570] text-white py-3 rounded-lg hover:bg-[#00456a] transition-colors font-medium"
+                      style={{
+                        fontFamily: 'Poppins, sans-serif',
+                        fontSize: '16px'
+                      }}
+                    >
+                      Submit
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
 export default App;
+
