@@ -965,7 +965,7 @@ function App() {
 
           {/* Modal Content */}
           <div
-            className="relative w-full max-w-7xl overflow-hidden p-2 sm:p-4 md:p-6 lg:p-12"
+            className="relative w-full max-w-6xl overflow-hidden p-2 sm:p-4 md:p-6 lg:p-8"
             style={{
               backgroundImage: 'url(/images/popup.png)',
               backgroundSize: 'cover',
@@ -983,8 +983,8 @@ function App() {
             </button>
 
             {/* Grid Content Wrapper with White Background */}
-            <div className="bg-white rounded-lg max-w-5xl mx-auto overflow-auto max-h-[90vh]">
-              <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[350px] p-3 sm:p-4 md:p-6 overflow-hidden rounded-lg">
+            <div className="bg-white rounded-lg max-w-5xl mx-auto overflow-auto max-h-[95vh]">
+              <div className="grid grid-cols-1 md:grid-cols-2 p-2 sm:p-3 md:p-5 overflow-hidden rounded-lg">
                 {/* Left Side - Image */}
                 <div className="hidden md:block">
                   <img
@@ -995,10 +995,10 @@ function App() {
                 </div>
 
                 {/* Right Side - Form */}
-                <div className="flex flex-col px-3 sm:px-6 md:px-8 lg:px-10 bg-white py-2 sm:py-0">
+                <div className="flex flex-col px-3 sm:px-6 md:px-8 lg:px-2 ml-2 bg-white py-2 sm:py-0">
                   {/* Form Header */}
                   <h2
-                    className="mb-2 sm:mb-3"
+                    className="mb-1 sm:mb-2"
                     style={{
                       color: '#003049',
                       fontFamily: 'Poppins, sans-serif',
@@ -1010,7 +1010,7 @@ function App() {
                     Be part of LinkEdtohome's Pilot Programme
                   </h2>
                   <p
-                    className="mb-4 sm:mb-6"
+                    className="mb-3 sm:mb-4"
                     style={{
                       color: '#827E7E',
                       fontFamily: 'Poppins, sans-serif',
@@ -1023,7 +1023,7 @@ function App() {
                   </p>
 
                   {/* Form */}
-                  <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 p-3 sm:p-4 md:p-6 bg-[#fffdf9] rounded-lg">
+                  <form onSubmit={handleSubmit} className="space-y-2 sm:space-y-3 p-2 sm:p-4 md:p-5 bg-[#fffdf9] rounded-lg">
                     {/* Full Name */}
                     <div>
                       <label
@@ -1046,7 +1046,7 @@ function App() {
                         onChange={handleInputChange}
                         placeholder="Enter your full name"
                         required
-                        className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-transparent transition-all text-sm sm:text-base"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-transparent transition-all text-sm sm:text-base"
                         style={{
                           fontFamily: 'Poppins, sans-serif',
                           fontSize: 'clamp(13px, 2vw, 14px)'
@@ -1076,7 +1076,7 @@ function App() {
                         onChange={handleInputChange}
                         placeholder="Enter your school name"
                         required
-                        className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-transparent transition-all text-sm sm:text-base"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-transparent transition-all text-sm sm:text-base"
                         style={{
                           fontFamily: 'Poppins, sans-serif',
                           fontSize: 'clamp(13px, 2vw, 14px)'
@@ -1106,7 +1106,7 @@ function App() {
                         onChange={handleInputChange}
                         placeholder="Enter your email address"
                         required
-                        className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-transparent transition-all text-sm sm:text-base"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003049] focus:border-transparent transition-all text-sm sm:text-base"
                         style={{
                           fontFamily: 'Poppins, sans-serif',
                           fontSize: 'clamp(13px, 2vw, 14px)'
@@ -1117,7 +1117,7 @@ function App() {
                     {/* Submit Button */}
                     <button
                       type="submit"
-                      className="w-full mt-3 sm:mt-4 bg-[#173570] text-white py-2.5 sm:py-3 rounded-lg hover:bg-[#00456a] transition-colors font-medium"
+                      className="w-full mt-2 sm:mt-3 bg-[#173570] text-white py-2 sm:py-2.5 rounded-lg hover:bg-[#00456a] transition-colors font-medium"
                       style={{
                         fontFamily: 'Poppins, sans-serif',
                         fontSize: 'clamp(14px, 2vw, 16px)'
