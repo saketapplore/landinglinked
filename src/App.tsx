@@ -176,7 +176,7 @@ function App() {
         {/* Mobile: Show only links.png image */}
         <div className="md:hidden px-4">
           <img
-            src="/images/realitty.png"
+            src="/images/realities.png"
             alt="Reality section"
             className="w-full h-auto object-contain rounded-lg"
           />
