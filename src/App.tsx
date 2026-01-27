@@ -270,9 +270,14 @@ function App() {
             {/* Main Title with Image */}
             <div className="flex justify-center">
               <img
+                src="/images/home2.png"
+                alt="What is LinkEDtohome?"
+                className="h-20 md:hidden"
+              />
+              <img
                 src="/images/home1.png"
                 alt="What is LinkEDtohome?"
-                className="h-12 sm:h-2 lg:h-[80px]"
+                className="hidden md:block lg:h-[80px] md:h-16"
               />
             </div>
 
