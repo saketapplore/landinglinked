@@ -36,7 +36,7 @@ app.post('/api/submit-form', async (req, res) => {
 
   const mailOptions = {
     from: process.env.SMTP_FROM?.trim(),
-    to: 'saket.kakkar@applore.in',
+    to: 'susie@linkedtohome.com',
     subject: `Test subject`,
     text: `
       New registration received:
