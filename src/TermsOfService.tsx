@@ -23,7 +23,7 @@ function TermsOfService() {
         console.log('Form submitted:', formData);
 
         try {
-            const response = await fetch('/api/submit-form', {
+            const response = await fetch('https://linked-to-home-api.applore.in/api/admin/pilot-program/submit-form', {
 
                 method: 'POST',
                 headers: {
