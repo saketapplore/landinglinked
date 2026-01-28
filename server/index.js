@@ -17,8 +17,8 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Serve static files from the React app's build directory
-app.use(express.static(join(__dirname, '../build')));
+// Serve static files from the React app's dist directory
+app.use(express.static(join(__dirname, '../dist')));
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST?.trim(),
@@ -70,7 +70,7 @@ app.post('/api/submit-form', async (req, res) => {
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (req, res) => {
-  res.sendFile(join(__dirname, '../build/index.html'));
+  res.sendFile(join(__dirname, '../dist/index.html'));
 });
 
 app.listen(port, () => {

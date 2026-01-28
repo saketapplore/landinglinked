@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function PrivacyPolicy() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -53,13 +54,13 @@ function PrivacyPolicy() {
                     <div className="grid grid-cols-2 items-center h-12 sm:h-16">
                         {/* Logo */}
                         <div className="flex items-center justify-start">
-                            <a href="/">
+                            <Link to="/">
                                 <img
                                     src="/images/linkedlogo11.png"
                                     alt="LinkED to home"
                                     className="h-12 sm:h-16 lg:h-20 object-fill"
                                 />
-                            </a>
+                            </Link>
                         </div>
                         {/* Desktop Navigation Links with Button */}
                         <div className="hidden md:flex space-x-3 md:space-x-4 lg:space-x-[60px] items-center justify-end">
@@ -1007,12 +1008,12 @@ function PrivacyPolicy() {
 
                         {/* Legal Links */}
                         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 lg:gap-6 order-1 md:order-2">
-                            <a href="/privacy" className="hover:text-[#003049] transition-colors text-center whitespace-nowrap" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(11px, 1.5vw, 14px)', fontStyle: 'normal', fontWeight: 400 }}>
+                            <Link to="/privacy" className="hover:text-[#003049] transition-colors text-center whitespace-nowrap" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(11px, 1.5vw, 14px)', fontStyle: 'normal', fontWeight: 400 }}>
                                 Privacy Policy
-                            </a>
-                            <a href="/terms" className="hover:text-[#003049] transition-colors text-center whitespace-nowrap" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(11px, 1.5vw, 14px)', fontStyle: 'normal', fontWeight: 400 }}>
+                            </Link>
+                            <Link to="/terms" className="hover:text-[#003049] transition-colors text-center whitespace-nowrap" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(11px, 1.5vw, 14px)', fontStyle: 'normal', fontWeight: 400 }}>
                                 Terms of Service
-                            </a>
+                            </Link>
                             {/* <a href="#" className="hover:text-[#003049] transition-colors text-center whitespace-nowrap" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(11px, 1.5vw, 14px)', fontStyle: 'normal', fontWeight: 400 }}>
                 Cookie Policy
               </a> */}
