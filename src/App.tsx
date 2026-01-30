@@ -450,7 +450,7 @@ function App() {
             {/* Left Section - Smartphone Image */}
             <div className="w-full lg:w-4/7 flex justify-center lg:justify-start">
               <img
-                src="/images/linked7.png"
+                src="/images/context.png"
                 alt="Parent Toolkit app interface"
                 className="w-full max-w-md h-auto object-contain"
               />
@@ -528,7 +528,7 @@ function App() {
             {/* Right Section - Smartphone Image */}
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
               <img
-                src="/images/linked8.png"
+                src="/images/salerts.png"
                 alt="Contextual safeguarding alerts app interface"
                 className="w-full max-w-md h-auto object-contain"
               />
