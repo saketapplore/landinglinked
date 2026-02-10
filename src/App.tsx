@@ -173,9 +173,9 @@ function App() {
       </section>
 
       {/* Reality Section */}
-      <section className="relative max-w-7xl mx-auto mt-8 sm:mt-12 lg:mt-14">
+      <section className="relative max-w-7xl mx-auto mt-8 sm:mt-12 xl:mt-14">
         {/* Mobile: Show only links.png image */}
-        <div className="md:hidden px-4">
+        <div className="xl:hidden px-4">
           <img
             src="/images/realities.png"
             alt="Reality section"
@@ -184,7 +184,7 @@ function App() {
         </div>
 
         {/* Desktop: Show background with text overlay */}
-        <div className="hidden md:flex items-center min-h-[300px] lg:min-h-[400px] px-4 sm:px-6">
+        <div className="hidden xl:flex items-center min-h-[300px] xl:min-h-[400px] px-4 sm:px-6">
           {/* Background Image */}
           <div
             className="absolute inset-0 bg-no-repeat bg-center rounded-lg mx-4 sm:mx-6 lg:mx-0"
