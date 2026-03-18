@@ -228,9 +228,9 @@ function About() {
       {/* Profile Section - Susie Williams */}
       <section className="py-12 sm:py-20 bg-white overflow-hidden">
         <div className="max-w-8xl mx-auto px-6 sm:px-12">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          <div className="flex flex-col lg:flex-row items-center gap-10">
             {/* Left Content */}
-            <div className="w-full lg:w-1/2 space-y-6 lg:ml-12 sm:space-y-8">
+            <div className="w-full lg:w-1/2 space-y-6 lg:ml-24 sm:space-y-8">
               <h2 className="text-[#003049] text-2xl sm:text-3xl lg:text-[26px] font-bold leading-tight" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 &ldquo;Susie understands what makes parents engage (and what makes them disengage).&rdquo;
               </h2>
@@ -259,7 +259,7 @@ function About() {
             </div>
 
             {/* Right Image Section */}
-            <div className="w-full lg:w-1/2 flex justify-center lg:mr-14 lg:justify-end">
+            <div className="w-full lg:w-1/2 flex lg:mr-24 lg:justify-end">
               <div className="relative">
                 <img 
                   src="/images/susi.png" 
@@ -274,10 +274,10 @@ function About() {
 
       {/* Profile Section - Katie Norris */}
       <section className="py-12 sm:py-20 bg-white overflow-hidden">
-        <div className="max-w-8xl mx-auto sm:px-12">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div className="max-w-8xl mx-auto px-6 sm:px-12">
+          <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
             {/* Left Image Section */}
-            <div className="w-full lg:w-1/2 flex justify-center lg:ml-14 lg:justify-start">
+            <div className="w-full lg:w-1/2 flex justify-center lg:ml-24 lg:justify-start">
               <div className="relative">
                 <img 
                   src="/images/katiN.png" 
@@ -288,7 +288,7 @@ function About() {
             </div>
 
             {/* Right Content */}
-            <div className="w-full lg:w-1/2 space-y-6 sm:space-y-8">
+            <div className="w-full lg:w-1/2 space-y-6 lg:mr-24 sm:space-y-8">
               <h2 className="text-[#003049] text-2xl sm:text-3xl lg:text-[26px] font-bold leading-tight" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 &ldquo;Katie knows every pain point schools face because she&rsquo;s lived them&rdquo;
               </h2>
@@ -324,7 +324,7 @@ function About() {
         <div className="max-w-8xl mx-auto px-6 sm:px-12">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             {/* Left Content */}
-            <div className="w-full lg:w-1/2 space-y-6 lg:ml-12 sm:space-y-8">
+            <div className="w-full lg:w-1/2 space-y-6 lg:ml-24 sm:space-y-8">
               <h2 className="text-[#003049] text-2xl sm:text-3xl lg:text-[26px] font-bold leading-tight" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 &ldquo;Kate is the partnership. Her network and sector authority is our unfair advantage.&rdquo;
               </h2>
@@ -353,7 +353,7 @@ function About() {
             </div>
 
             {/* Right Image Section */}
-            <div className="w-full lg:w-1/2 flex justify-center lg:mr-14 lg:justify-end">
+            <div className="w-full lg:w-1/2 flex justify-center lg:mr-24 lg:justify-end">
               <div className="relative">
                 <img 
                   src="/images/kate.png" 
@@ -371,7 +371,7 @@ function About() {
         <div className="max-w-8xl mx-auto px-6 sm:px-12">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             {/* Left Image Section */}
-            <div className="w-full lg:w-1/2 flex justify-center lg:ml-14 lg:justify-start">
+            <div className="w-full lg:w-1/2 flex justify-center lg:ml-24 lg:justify-start">
               <div className="relative">
                 <img 
                   src="/images/appl.png" 
@@ -382,7 +382,7 @@ function About() {
             </div>
 
             {/* Right Content */}
-            <div className="w-full lg:w-1/2 space-y-6 lg:mr-12 sm:space-y-8">
+            <div className="w-full lg:w-1/2 space-y-6 lg:mr-24 sm:space-y-8">
               <h2 className="text-[#003049] text-2xl sm:text-3xl lg:text-[27px] font-bold leading-tight" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 &ldquo;Applore is our technology partner, providing the expertise to deliver and scale the platform effectively from day one.&rdquo;
               </h2>
