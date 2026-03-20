@@ -298,7 +298,7 @@ function About() {
                 <img src="/images/line.png" alt="line" className="w-[8px] sm:w-[10px] h-20 sm:h-28 shrink-0 object-fill" />
                 <div className="space-y-1">
                   <p className="text-[#003049] text-base sm:text-lg lg:text-lg font-normal leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                    15+ years in Secondary Education (PSHE, pastoral care, safeguarding)
+                    15+ years in Secondary Education (Personal Development and PSHE expert)
                   </p>  
                   <p className="text-[#003049] text-base sm:text-lg lg:text-lg font-normal leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>
                     Multi-Academy Trust relationship builder.
@@ -369,7 +369,7 @@ function About() {
       {/* Profile Section - (Applore) */}
       <section className="py-12 sm:py-20 bg-white overflow-hidden">
         <div className="max-w-8xl mx-auto px-6 sm:px-12">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
             {/* Left Image Section */}
             <div className="w-full lg:w-1/2 flex justify-center lg:ml-24 lg:justify-start">
               <div className="relative">
