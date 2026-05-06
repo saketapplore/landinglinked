@@ -68,7 +68,7 @@ function About() {
               <Link to="/#for-parents" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>For parents</Link>
               <Link to="/about" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>About Us</Link>
               <button onClick={() => setShowPopup(true)} className="bg-[#003049] text-white px-4 sm:px-6 lg:px-10 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md hover:bg-blue-800 transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                Get Started
+                Contact Us
               </button>
             </div>
             {/* Mobile Menu Button */}
@@ -100,7 +100,7 @@ function About() {
                 <Link to="/about" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
                 <div className="px-4 pt-2">
                   <button className="bg-[#003049] text-white w-full px-6 py-2.5 rounded-md hover:bg-blue-800 transition-colors text-sm font-medium" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => { setMobileMenuOpen(false); setShowPopup(true); }}>
-                    Get Started
+                    Contact Us
                   </button>
                 </div>
               </div>
@@ -470,10 +470,10 @@ function About() {
                 The platform helps parents understand concerns about their child, access guidance aligned with what schools teach, and communicate more clearly with schools when support may be needed. By connecting parent insight with school support, LinkEDtohome strengthens the partnership between families and schools and helps children receive the support they need earlier.
               </p>
 
-              {/* Get Started Button */}
+              {/* Contact us Button */}
               <div className="pt-2 sm:pt-4">
                 <button onClick={() => setShowPopup(true)} className="bg-[#003049] text-white px-8 sm:px-10 lg:px-12 py-2.5 sm:py-3 text-sm sm:text-base rounded-md hover:bg-blue-800 transition-colors font-medium">
-                  Get Started
+                  Contact Us
                 </button>
               </div>
             </div>
@@ -508,7 +508,7 @@ function About() {
                   className="bg-[#08A0AF] text-white px-8 sm:px-10 py-3.5 rounded-xl font-bold hover:bg-[#068a96] hover:shadow-lg transition-all active:scale-[0.98] text-sm sm:text-base"
                   style={{ fontFamily: 'Poppins, sans-serif' }}
                 >
-                  Get Started
+                  Contact us
                 </button>
               </div>
             </div>
@@ -585,7 +585,7 @@ function About() {
           </div>
         </div>
       </footer>
-      {/* Get Started Popup */}
+      {/* Contact us Popup */}
       {showPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4">
           {/* Backdrop */}

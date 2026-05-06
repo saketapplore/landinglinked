@@ -80,7 +80,7 @@ function App() {
               <Link to="/#for-parents" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>For parents</Link>
               <Link to="/about" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>About Us</Link>
               <button onClick={() => setShowPopup(true)} className="bg-[#003049] text-white px-4 sm:px-6 lg:px-10 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md hover:bg-blue-800 transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                Get Started
+                Contact Us
               </button>
             </div>
             {/* Mobile Menu Button */}
@@ -112,7 +112,7 @@ function App() {
                 <Link to="/about" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
                 <div className="px-4 pt-2">
                   <button className="bg-[#003049] text-white w-full px-6 py-2.5 rounded-md hover:bg-blue-800 transition-colors text-sm font-medium" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => { setMobileMenuOpen(false); setShowPopup(true); }}>
-                    Get Started
+                    Contact Us
                   </button>
                 </div>
               </div>
@@ -152,10 +152,10 @@ function App() {
                 LinkEDtohome is a school-aligned parent support platform that helps schools reinforce safeguarding, wellbeing, and personal development beyond the classroom without increasing staff workload.
               </p>
 
-              {/* Get Started Button */}
+              {/* Contact us Button */}
               <div className="pt-2 sm:pt-4">
                 <button onClick={() => setShowPopup(true)} className="bg-[#003049] text-white px-6 sm:px-10 lg:px-12 py-2 sm:py-3 text-sm sm:text-base rounded-md hover:bg-blue-800 transition-colors font-medium">
-                  Get Started
+                  Contact Us
                 </button>
               </div>
             </div>
@@ -854,10 +854,10 @@ function App() {
                 </li>
               </ul>
 
-              {/* Get Started Button */}
+              {/* Contact us Button */}
               <div className="pt-2 sm:pt-4">
                 <button onClick={() => setShowPopup(true)} className="bg-[#003049] text-white px-8 sm:px-10 lg:px-12 py-2.5 sm:py-3 text-sm sm:text-base rounded-md hover:bg-blue-800 transition-colors font-medium">
-                  Get Started
+                  Contact Us
                 </button>
               </div>
             </div>
@@ -890,10 +890,10 @@ function App() {
                 LinkEDtohome turns school expertise into everyday parent confidence so pupils hear the same message, wherever they are.
               </p>
 
-              {/* Get Started Button */}
+              {/* Contact us Button */}
               <div className="pt-2 sm:pt-4">
                 <button onClick={() => setShowPopup(true)} className="bg-[#003049] text-white px-8 sm:px-10 lg:px-12 py-2.5 sm:py-3 text-sm sm:text-base rounded-md hover:bg-blue-800 transition-colors font-medium">
-                  Get Started
+                  Contact Us
                 </button>
               </div>
             </div>
