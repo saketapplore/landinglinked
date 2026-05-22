@@ -164,7 +164,7 @@ function App() {
           {/* Right Section - Image (Full Width) */}
           <div className="w-full lg:w-1/2 relative mt-6 lg:mt-0">
             <img
-              src="/images/linked1.png"
+              src="/images/linked1.jpeg"
               alt="Family reading together"
               className="w-full h-full object-cover"
             />
