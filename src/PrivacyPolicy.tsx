@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://linked-to-home-api.applore.in/api';
+
 function PrivacyPolicy() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [showPopup, setShowPopup] = useState(false);
@@ -23,7 +25,7 @@ function PrivacyPolicy() {
         console.log('Form submitted:', formData);
 
         try {
-            const response = await fetch('https://linked-to-home-api.applore.in/api/admin/pilot-program/submit-form', {
+            const response = await fetch(`${API_BASE}/admin/pilot-program/submit-form`, {
 
                 method: 'POST',
                 headers: {

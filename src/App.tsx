@@ -1,5 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://linked-to-home-api.applore.in/api';
+
+const FALLBACK_TIERS = [
+  { name: 'small', minPupils: 0, maxPupils: 100, prices: { year1: 500, year2: 950, year3: 1400 } },
+  { name: 'medium', minPupils: 101, maxPupils: 600, prices: { year1: 1000, year2: 1900, year3: 2750 } },
+  { name: 'large', minPupils: 601, maxPupils: null, prices: { year1: 1500, year2: 2900, year3: 4250 } },
+];
+
+const fmt = (n: number) => `£${n.toLocaleString('en-GB')}`;
+
+const pupilRangeLabel = (tier: { minPupils: number; maxPupils: number | null }) => {
+  if (tier.maxPupils == null) return `${tier.minPupils}+ pupils`;
+  if (tier.minPupils === 0) return `Up to ${tier.maxPupils} pupils`;
+  return `${tier.minPupils} – ${tier.maxPupils} pupils`;
+};
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -9,6 +25,18 @@ function App() {
     schoolName: '',
     email: ''
   });
+  const [pricingTiers, setPricingTiers] = useState(FALLBACK_TIERS);
+  const [selectedDuration, setSelectedDuration] = useState(1);
+  const [selectedTier, setSelectedTier] = useState<string>('medium');
+
+  useEffect(() => {
+    fetch(`${API_BASE}/pricing`)
+      .then((r) => r.json())
+      .then((json) => {
+        if (json?.data?.tiers?.length > 0) setPricingTiers(json.data.tiers);
+      })
+      .catch(() => {/* keep fallback */ });
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -23,7 +51,7 @@ function App() {
     console.log('Form submitted:', formData);
 
     try {
-      const response = await fetch('https://linked-to-home-api.applore.in/api/admin/pilot-program/submit-form', {
+      const response = await fetch(`${API_BASE}/admin/pilot-program/submit-form`, {
 
         method: 'POST',
         headers: {
@@ -75,9 +103,10 @@ function App() {
             </div>
             {/* Desktop Navigation Links with Button */}
             <div className="hidden md:flex space-x-3 md:space-x-4 lg:space-x-[60px] items-center justify-end">
-              <Link to="/#home" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>Home</Link>
-              <Link to="/#for-school" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>For school</Link>
-              <Link to="/#for-parents" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>For parents</Link>
+              <a href="#home" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>Home</a>
+              <a href="#for-school" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>For school</a>
+              <a href="#for-parents" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>For parents</a>
+              <Link to="/pricing" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>Pricing</Link>
               <Link to="/about" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>About Us</Link>
               <button onClick={() => setShowPopup(true)} className="bg-[#003049] text-white px-4 sm:px-6 lg:px-10 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md hover:bg-blue-800 transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 Contact Us
@@ -106,9 +135,10 @@ function App() {
           {mobileMenuOpen && (
             <div className="md:hidden border-t border-gray-200 py-4">
               <div className="flex flex-col space-y-4">
-                <Link to="/#home" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>Home</Link>
-                <Link to="/#for-school" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>For school</Link>
-                <Link to="/#for-parents" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>For parents</Link>
+                <a href="#home" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>Home</a>
+                <a href="#for-school" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>For school</a>
+                <a href="#for-parents" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>For parents</a>
+                <Link to="/pricing" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
                 <Link to="/about" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
                 <div className="px-4 pt-2">
                   <button className="bg-[#003049] text-white w-full px-6 py-2.5 rounded-md hover:bg-blue-800 transition-colors text-sm font-medium" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => { setMobileMenuOpen(false); setShowPopup(true); }}>
@@ -861,6 +891,143 @@ function App() {
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="bg-[#F8FAFB] py-16 sm:py-20 lg:py-28">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 700 }}>
+              Simple, Transparent Pricing
+            </h2>
+            <p className="mt-3 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+              Choose the duration that works for your school. Pricing is based on your school size — automatically detected via your MIS system.
+            </p>
+          </div>
+
+          {/* Duration tabs */}
+          <div className="flex justify-center mb-10">
+            <div className="inline-flex bg-white border border-gray-200 rounded-xl p-1 gap-1">
+              {[
+                { label: '1 Year', sub: 'Standard', value: 1 },
+                { label: '2 Years', sub: 'Save ~10%', value: 2 },
+                { label: '3 Years', sub: 'Best Value', value: 3 },
+              ].map((d) => {
+                const isActive = selectedDuration === d.value;
+                return (
+                  <button
+                    key={d.value}
+                    onClick={() => setSelectedDuration(d.value)}
+                    className={`px-5 py-2 rounded-lg text-center transition-colors cursor-pointer ${isActive ? 'bg-[#003049] text-white' : 'text-gray-700 hover:bg-gray-100'}`}
+                  >
+                    <div className="text-sm font-semibold">{d.label}</div>
+                    <div className={`text-xs ${isActive ? 'text-white/70' : 'text-[#08A0AF]'}`}>{d.sub}</div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Pricing cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {pricingTiers.map((tier, idx) => {
+              const isHighlighted = tier.name === selectedTier;
+              const dotColors = ['bg-blue-400', 'bg-amber-400', 'bg-emerald-400'];
+              const durationKey = `year${selectedDuration}` as 'year1' | 'year2' | 'year3';
+              const activePrice = tier.prices[durationKey];
+              const registerUrl = `http://localhost:5173/register?duration=${selectedDuration}&tier=${tier.name}`;
+              return (
+                <div
+                  key={tier.name}
+                  onClick={() => setSelectedTier(tier.name)}
+                  className={`rounded-2xl p-6 shadow-sm relative overflow-hidden flex flex-col transition-all cursor-pointer ${isHighlighted ? 'bg-[#003049] shadow-lg scale-[1.02]' : 'bg-white border border-gray-200 hover:shadow-md hover:border-[#003049]'}`}
+                >
+                  {tier.name === 'medium' && (
+                    <div className="absolute top-4 right-4">
+                      <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${isHighlighted ? 'bg-[#08A0AF] text-white' : 'bg-gray-100 text-gray-500'}`}>Most Popular</span>
+                    </div>
+                  )}
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className={`w-3 h-3 rounded-full ${dotColors[idx] ?? 'bg-gray-400'}`}></div>
+                    <h3 className={`text-lg font-bold capitalize ${isHighlighted ? 'text-white' : 'text-[#003049]'}`}>{tier.name} School</h3>
+                  </div>
+                  <p className={`text-xs mb-5 ${isHighlighted ? 'text-white/60' : 'text-gray-500'}`}>{pupilRangeLabel(tier)}</p>
+
+                  {/* Active duration price — prominent */}
+                  <div className="mb-4">
+                    <span className={`text-4xl font-bold ${isHighlighted ? 'text-white' : 'text-[#003049]'}`}>{fmt(activePrice)}</span>
+                    <span className={`text-sm ml-1 ${isHighlighted ? 'text-white/60' : 'text-gray-500'}`}>
+                      / {selectedDuration} year{selectedDuration > 1 ? 's' : ''}
+                    </span>
+                  </div>
+
+                  {/* Other durations — smaller reference */}
+                  <div className="space-y-1 mb-6">
+                    {(['year1', 'year2', 'year3'] as const).map((key, i) => {
+                      if (i + 1 === selectedDuration) return null;
+                      return (
+                        <div key={key} className={`flex justify-between items-center text-xs ${isHighlighted ? 'text-white/40' : 'text-gray-400'}`}>
+                          <span>{i + 1} Year{i > 0 ? 's' : ''}</span>
+                          <span>{fmt(tier.prices[key])}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  <p className={`text-xs mb-6 ${isHighlighted ? 'text-white/40' : 'text-gray-400'}`}>+ VAT where applicable</p>
+
+                  {/* CTA button */}
+                  <div className="mt-auto">
+                    <a
+                      href={registerUrl}
+                      className={`block w-full text-center py-2.5 rounded-xl text-sm font-semibold transition-colors ${isHighlighted
+                        ? 'bg-[#08A0AF] text-white hover:bg-[#069aaa]'
+                        : 'bg-[#003049] text-white hover:bg-[#08A0AF]'
+                        }`}
+                    >
+                      Get Started
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* What's included */}
+          <div className="mt-10 bg-white rounded-2xl border border-gray-200 p-6 sm:p-8">
+            <h3 className="text-base font-bold text-[#003049] mb-4">All plans include</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              {[
+                'Full platform access for all staff',
+                'Parent & family engagement tools',
+                'AI safeguarding assistant',
+                'Secure messaging & resources',
+                'Webinars & professional development',
+                'MIS / Wonde integration',
+                'Dedicated onboarding support',
+                'Invoice & bank transfer payment',
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-[#08A0AF] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-sm text-gray-700">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-10 text-center">
+            <p className="text-sm text-gray-500 mb-4">Prices are indicative. Your exact price is confirmed during sign-up based on your school's pupil count.</p>
+            <a
+              href="http://localhost:5173/register"
+              className="inline-block bg-[#003049] text-white px-10 py-3 rounded-xl font-semibold text-base hover:bg-[#08A0AF] transition-colors"
+            >
+              Register Your School
+            </a>
           </div>
         </div>
       </section>

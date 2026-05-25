@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://linked-to-home-api.applore.in/api';
+
 function About() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
@@ -23,7 +25,7 @@ function About() {
     console.log('Form submitted:', formData);
 
     try {
-      const response = await fetch('https://linked-to-home-api.applore.in/api/admin/pilot-program/submit-form', {
+      const response = await fetch(`${API_BASE}/admin/pilot-program/submit-form`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -66,7 +68,8 @@ function About() {
               <Link to="/#home" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>Home</Link>
               <Link to="/#for-school" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>For school</Link>
               <Link to="/#for-parents" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>For parents</Link>
-              <Link to="/about" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>About Us</Link>
+              <Link to="/pricing" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>Pricing</Link>
+              <Link to="/about" className="text-[#08A0AF] text-xs md:text-sm lg:text-base font-semibold transition-colors whitespace-nowrap border-b-2 border-[#08A0AF] pb-0.5" style={{ fontFamily: 'Poppins, sans-serif' }}>About Us</Link>
               <button onClick={() => setShowPopup(true)} className="bg-[#003049] text-white px-4 sm:px-6 lg:px-10 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md hover:bg-blue-800 transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 Contact Us
               </button>
@@ -97,7 +100,8 @@ function About() {
                 <Link to="/#home" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>Home</Link>
                 <Link to="/#for-school" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>For school</Link>
                 <Link to="/#for-parents" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>For parents</Link>
-                <Link to="/about" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+                <Link to="/pricing" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
+                <Link to="/about" className="text-[#08A0AF] text-base font-semibold transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
                 <div className="px-4 pt-2">
                   <button className="bg-[#003049] text-white w-full px-6 py-2.5 rounded-md hover:bg-blue-800 transition-colors text-sm font-medium" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => { setMobileMenuOpen(false); setShowPopup(true); }}>
                     Contact Us
@@ -145,10 +149,10 @@ function About() {
       <section className="mb-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="flex flex-col items-center">
-            <img 
-              src="/images/values.png" 
-              alt="Our values" 
-              className="h-auto w-full max-w-[320px] sm:max-w-[450px] mb-6" 
+            <img
+              src="/images/values.png"
+              alt="Our values"
+              className="h-auto w-full max-w-[320px] sm:max-w-[450px] mb-6"
             />
             <p className="text-[#827E7E] text-lg sm:text-xl font-normal max-w-2xl mx-auto" style={{ fontFamily: 'Poppins, sans-serif' }}>
               The principle that guide how we support schools, <br className="hidden sm:block" />
@@ -203,20 +207,20 @@ function About() {
             ))}
           </div>
         </div>
-      </section>  
-      
-      
-       {/* Meet the Team Section */}
+      </section>
+
+
+      {/* Meet the Team Section */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <div className="flex flex-col items-center">
-            <img 
-              src="/images/makeTeam.png" 
-              alt="Meet the Team" 
-              className="h-auto w-full max-w-[320px] sm:max-w-[450px] mb-8" 
+            <img
+              src="/images/makeTeam.png"
+              alt="Meet the Team"
+              className="h-auto w-full max-w-[320px] sm:max-w-[450px] mb-8"
             />
-            <p 
-              className="text-[#827E7E] text-lg sm:text-xl font-normal leading-relaxed max-w-[1100px] mx-auto" 
+            <p
+              className="text-[#827E7E] text-lg sm:text-xl font-normal leading-relaxed max-w-[1100px] mx-auto"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
               LinkEDtohome was founded in 2025 by Susie Williams and Katie Norris, experienced school leaders in safeguarding, attendance, pastoral care and personal development. In the same year they partnered with Kate Harris, Founder and CEO of VotesforSchools, bringing together decades of experience across education, leadership and pupil voice.
@@ -234,7 +238,7 @@ function About() {
               <h2 className="text-[#003049] text-2xl sm:text-3xl lg:text-[26px] font-bold leading-tight" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 &ldquo;Susie understands what makes parents engage (and what makes them disengage).&rdquo;
               </h2>
-              
+
               <div className="flex items-stretch gap-4 sm:gap-6 mr-1">
                 {/* Custom Marker Bar */}
                 <img src="/images/line.png" alt="line" className="w-[10px] sm:w-[8px] h-16 sm:h-20 shrink-0 object-fill" />
@@ -261,9 +265,9 @@ function About() {
             {/* Right Image Section */}
             <div className="w-full lg:w-1/2 flex lg:mr-24 lg:justify-end">
               <div className="relative">
-                <img 
-                  src="/images/susi.png" 
-                  alt="Susie Williams Portrait" 
+                <img
+                  src="/images/susi.png"
+                  alt="Susie Williams Portrait"
                   className="w-full max-w-[500px] h-auto object-contain transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -279,9 +283,9 @@ function About() {
             {/* Left Image Section */}
             <div className="w-full lg:w-1/2 flex justify-center lg:ml-24 lg:justify-start">
               <div className="relative">
-                <img 
-                  src="/images/katiN.png" 
-                  alt="Katie Norris Portrait" 
+                <img
+                  src="/images/katiN.png"
+                  alt="Katie Norris Portrait"
                   className="w-full max-w-[500px] h-auto object-contain transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -292,14 +296,14 @@ function About() {
               <h2 className="text-[#003049] text-2xl sm:text-3xl lg:text-[26px] font-bold leading-tight" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 &ldquo;Katie knows every pain point schools face because she&rsquo;s lived them&rdquo;
               </h2>
-              
+
               <div className="flex items-stretch gap-4 sm:gap-6">
                 {/* Custom Marker Bar */}
                 <img src="/images/line.png" alt="line" className="w-[8px] sm:w-[10px] h-20 sm:h-28 shrink-0 object-fill" />
                 <div className="space-y-1">
                   <p className="text-[#003049] text-base sm:text-lg lg:text-lg font-normal leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>
                     15+ years in Secondary Education (Personal Development and PSHE expert)
-                  </p>  
+                  </p>
                   <p className="text-[#003049] text-base sm:text-lg lg:text-lg font-normal leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>
                     Multi-Academy Trust relationship builder.
                   </p>
@@ -328,7 +332,7 @@ function About() {
               <h2 className="text-[#003049] text-2xl sm:text-3xl lg:text-[26px] font-bold leading-tight" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 &ldquo;Kate is the partnership. Her network and sector authority is our unfair advantage.&rdquo;
               </h2>
-              
+
               <div className="flex items-stretch gap-4 sm:gap-6">
                 {/* Custom Marker Bar */}
                 <img src="/images/line.png" alt="line" className="w-[8px] sm:w-[10px] h-20 sm:h-28 shrink-0 object-fill" />
@@ -355,9 +359,9 @@ function About() {
             {/* Right Image Section */}
             <div className="w-full lg:w-1/2 flex justify-center lg:mr-24 lg:justify-end">
               <div className="relative">
-                <img 
-                  src="/images/kate.png" 
-                  alt="Kate Harris Portrait" 
+                <img
+                  src="/images/kate.png"
+                  alt="Kate Harris Portrait"
                   className="w-full max-w-[500px] h-auto object-contain transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -373,9 +377,9 @@ function About() {
             {/* Left Image Section */}
             <div className="w-full lg:w-1/2 flex justify-center lg:ml-24 lg:justify-start">
               <div className="relative">
-                <img 
-                  src="/images/appl.png" 
-                  alt="Applore Portrait" 
+                <img
+                  src="/images/appl.png"
+                  alt="Applore Portrait"
                   className="w-full max-w-[500px] h-auto object-contain transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -386,7 +390,7 @@ function About() {
               <h2 className="text-[#003049] text-2xl sm:text-3xl lg:text-[27px] font-bold leading-tight" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 &ldquo;Applore is our technology partner, providing the expertise to deliver and scale the platform effectively from day one.&rdquo;
               </h2>
-              
+
               <div className="flex items-stretch gap-4 sm:gap-6">
                 {/* Custom Marker Bar */}
                 <img src="/images/line.png" alt="line" className="w-[8px] sm:w-[10px] h-20 sm:h-28 shrink-0 object-fill" />
@@ -410,7 +414,7 @@ function About() {
         </div>
       </section>
 
-       {/* Team Portraits Section */}
+      {/* Team Portraits Section */}
       {/* <section className="pb-16 sm:pb-24 lg:pb-20 bg-white">
         <div className="max-w-8xl mx-auto px-6 sm:px-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
@@ -429,14 +433,14 @@ function About() {
 
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 sm:px-12">
-          <h2 
-            className="text-center leading-relaxed antialiased" 
-            style={{ 
+          <h2
+            className="text-center leading-relaxed antialiased"
+            style={{
               color: 'var(--deep-blue, #003049)',
-              fontFamily: 'Poppins, sans-serif', 
+              fontFamily: 'Poppins, sans-serif',
               fontSize: 'clamp(20px, 3.5vw, 40px)',
               fontStyle: 'normal',
-              fontWeight: 700 
+              fontWeight: 700
             }}
           >
             "We've been school leaders, not tech outsiders. We've sat in the parent meetings, written the safeguarding policies, and felt the frustration of parents who want to help but don't know how. We're not guessing at the problem, we've lived it."
@@ -479,7 +483,7 @@ function About() {
             </div>
           </div>
         </div>
-      </section>     
+      </section>
 
       {/* Gap Bridge Section */}
       {/* <section className="py-12 sm:py-20 bg-white">
@@ -764,7 +768,7 @@ function About() {
         </div>
       )}
 
-   </div>
+    </div>
   );
 }
 

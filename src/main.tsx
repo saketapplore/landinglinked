@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './style.css'
 import App from './App.tsx'
 import About from './About.tsx'
+import Pricing from './Pricing.tsx'
 import PrivacyPolicy from './PrivacyPolicy.tsx'
 import TermsOfService from './TermsOfService.tsx'
 import ScrollToTop from './ScrollToTop.tsx'
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/about" element={<About />} />
+        <Route path="/pricing" element={<Pricing />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfService />} />
       </Routes>
