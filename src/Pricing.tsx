@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://linked-to-home-api.applore.in/api';
 
 const FALLBACK_TIERS = [
-  { name: 'small',  minPupils: 0,   maxPupils: 100,  prices: { year1: 500,  year2: 950,  year3: 1400 } },
-  { name: 'medium', minPupils: 101, maxPupils: 600,  prices: { year1: 1000, year2: 1900, year3: 2750 } },
-  { name: 'large',  minPupils: 601, maxPupils: null, prices: { year1: 1500, year2: 2900, year3: 4250 } },
+  { name: 'small', minPupils: 0, maxPupils: 100, prices: { year1: 500, year2: 950, year3: 1400 } },
+  { name: 'medium', minPupils: 101, maxPupils: 600, prices: { year1: 1000, year2: 1900, year3: 2750 } },
+  { name: 'large', minPupils: 601, maxPupils: null, prices: { year1: 1500, year2: 2900, year3: 4250 } },
 ];
 
 const fmt = (n: number) => `£${n.toLocaleString('en-GB')}`;
@@ -66,7 +66,7 @@ function Pricing() {
       .then((json) => {
         if (json?.data?.tiers?.length > 0) setPricingTiers(json.data.tiers);
       })
-      .catch(() => {/* keep fallback */});
+      .catch(() => {/* keep fallback */ });
   }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -108,11 +108,11 @@ function Pricing() {
               </Link>
             </div>
             <div className="hidden md:flex space-x-3 md:space-x-4 lg:space-x-[60px] items-center justify-end">
-              <Link to="/#home"       className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>Home</Link>
+              <Link to="/#home" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>Home</Link>
               <Link to="/#for-school" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>For school</Link>
-              <Link to="/#for-parents"className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>For parents</Link>
-              <Link to="/pricing"     className="text-[#08A0AF] text-xs md:text-sm lg:text-base font-semibold transition-colors whitespace-nowrap border-b-2 border-[#08A0AF] pb-0.5" style={{ fontFamily: 'Poppins, sans-serif' }}>Pricing</Link>
-              <Link to="/about"       className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>About Us</Link>
+              <Link to="/#for-parents" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>For parents</Link>
+              <Link to="/pricing" className="text-[#08A0AF] text-xs md:text-sm lg:text-base font-semibold transition-colors whitespace-nowrap border-b-2 border-[#08A0AF] pb-0.5" style={{ fontFamily: 'Poppins, sans-serif' }}>Pricing</Link>
+              <Link to="/about" className="text-[#003049] text-xs md:text-sm lg:text-base font-normal transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>About Us</Link>
               <button onClick={() => setShowPopup(true)} className="bg-[#003049] text-white px-4 sm:px-6 lg:px-10 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md hover:bg-blue-800 transition-colors whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 Contact Us
               </button>
@@ -130,11 +130,11 @@ function Pricing() {
           {mobileMenuOpen && (
             <div className="md:hidden border-t border-gray-200 py-4">
               <div className="flex flex-col space-y-4">
-                <Link to="/#home"        className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>Home</Link>
-                <Link to="/#for-school"  className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>For school</Link>
+                <Link to="/#home" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                <Link to="/#for-school" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>For school</Link>
                 <Link to="/#for-parents" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>For parents</Link>
-                <Link to="/pricing"      className="text-[#08A0AF] text-base font-semibold transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
-                <Link to="/about"        className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+                <Link to="/pricing" className="text-[#08A0AF] text-base font-semibold transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
+                <Link to="/about" className="text-[#003049] text-base font-normal transition-colors px-4" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
                 <div className="px-4 pt-2">
                   <button className="bg-[#003049] text-white w-full px-6 py-2.5 rounded-md hover:bg-blue-800 transition-colors text-sm font-medium" style={{ fontFamily: 'Poppins, sans-serif' }} onClick={() => { setMobileMenuOpen(false); setShowPopup(true); }}>
                     Contact Us
@@ -167,8 +167,8 @@ function Pricing() {
           <div className="flex justify-center mb-10">
             <div className="inline-flex bg-[#F8FAFB] border border-gray-200 rounded-xl p-1 gap-1">
               {[
-                { label: '1 Year',  sub: 'Standard',   value: 1 },
-                { label: '2 Years', sub: 'Save ~10%',  value: 2 },
+                { label: '1 Year', sub: 'Standard', value: 1 },
+                { label: '2 Years', sub: 'Save ~10%', value: 2 },
                 { label: '3 Years', sub: 'Best Value', value: 3 },
               ].map((d) => {
                 const isActive = selectedDuration === d.value;
@@ -193,16 +193,15 @@ function Pricing() {
               const dotColors = ['bg-blue-400', 'bg-amber-400', 'bg-emerald-400'];
               const durationKey = `year${selectedDuration}` as 'year1' | 'year2' | 'year3';
               const activePrice = tier.prices[durationKey];
-              const registerUrl = `https://app.linkedtohome.com/register?duration=${selectedDuration}&tier=${tier.name}`;
+              const registerUrl = `http://localhost:5173/register?duration=${selectedDuration}&tier=${tier.name}`;
               return (
                 <div
                   key={tier.name}
                   onClick={() => setSelectedTier(tier.name)}
-                  className={`rounded-2xl p-7 relative overflow-hidden flex flex-col transition-all cursor-pointer ${
-                    isHighlighted
-                      ? 'bg-[#003049] shadow-xl scale-[1.02]'
-                      : 'bg-white border border-gray-200 hover:shadow-md hover:border-[#003049]'
-                  }`}
+                  className={`rounded-2xl p-7 relative overflow-hidden flex flex-col transition-all cursor-pointer ${isHighlighted
+                    ? 'bg-[#003049] shadow-xl scale-[1.02]'
+                    : 'bg-white border border-gray-200 hover:shadow-md hover:border-[#003049]'
+                    }`}
                 >
                   {tier.name === 'medium' && (
                     <div className="absolute top-4 right-4">
@@ -247,11 +246,10 @@ function Pricing() {
                     <a
                       href={registerUrl}
                       onClick={(e) => e.stopPropagation()}
-                      className={`block w-full text-center py-2.5 rounded-xl text-sm font-semibold transition-colors ${
-                        isHighlighted
-                          ? 'bg-[#08A0AF] text-white hover:bg-[#069aaa]'
-                          : 'bg-[#003049] text-white hover:bg-[#08A0AF]'
-                      }`}
+                      className={`block w-full text-center py-2.5 rounded-xl text-sm font-semibold transition-colors ${isHighlighted
+                        ? 'bg-[#08A0AF] text-white hover:bg-[#069aaa]'
+                        : 'bg-[#003049] text-white hover:bg-[#08A0AF]'
+                        }`}
                     >
                       Get Started
                     </a>
@@ -332,7 +330,7 @@ function Pricing() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://app.linkedtohome.com/register"
+              href="https://localhost:5173/register"
               className="inline-block bg-[#08A0AF] text-white px-10 py-3.5 rounded-xl font-semibold text-base hover:bg-[#069aaa] transition-colors"
             >
               Register Your School
@@ -381,7 +379,7 @@ function Pricing() {
             </div>
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 lg:gap-6 order-1 md:order-2">
               <Link to="/privacy" className="hover:text-[#08A0AF] transition-colors whitespace-nowrap" style={{ color: '#003049', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(11px, 1.5vw, 14px)', fontWeight: 400 }}>Privacy Policy</Link>
-              <Link to="/terms"   className="hover:text-[#08A0AF] transition-colors whitespace-nowrap" style={{ color: '#003049', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(11px, 1.5vw, 14px)', fontWeight: 400 }}>Terms of Service</Link>
+              <Link to="/terms" className="hover:text-[#08A0AF] transition-colors whitespace-nowrap" style={{ color: '#003049', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(11px, 1.5vw, 14px)', fontWeight: 400 }}>Terms of Service</Link>
             </div>
           </div>
         </div>
@@ -409,9 +407,9 @@ function Pricing() {
                   </p>
                   <form onSubmit={handleSubmit} className="space-y-2 sm:space-y-3 p-2 sm:p-4 md:p-5 bg-[#fffdf9] rounded-lg">
                     {[
-                      { id: 'fullName',   label: 'Full Name',                  type: 'text',  placeholder: 'Enter your full name' },
-                      { id: 'schoolName', label: 'School / Institution Name',   type: 'text',  placeholder: 'Enter your school name' },
-                      { id: 'email',      label: 'Email Address',               type: 'email', placeholder: 'Enter your email address' },
+                      { id: 'fullName', label: 'Full Name', type: 'text', placeholder: 'Enter your full name' },
+                      { id: 'schoolName', label: 'School / Institution Name', type: 'text', placeholder: 'Enter your school name' },
+                      { id: 'email', label: 'Email Address', type: 'email', placeholder: 'Enter your email address' },
                     ].map((field) => (
                       <div key={field.id}>
                         <label htmlFor={field.id} className="block mb-1.5" style={{ color: '#003049', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(12px, 2vw, 14px)', fontWeight: 500 }}>
