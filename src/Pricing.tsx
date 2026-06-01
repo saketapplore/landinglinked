@@ -330,7 +330,7 @@ function Pricing() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://localhost:5173/register"
+              href="https://localhost:5174/register"
               className="inline-block bg-[#08A0AF] text-white px-10 py-3.5 rounded-xl font-semibold text-base hover:bg-[#069aaa] transition-colors"
             >
               Register Your School
