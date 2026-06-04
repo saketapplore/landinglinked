@@ -928,7 +928,7 @@ function App() {
               <a href="https://www.tiktok.com/@linkedtohome" className="rounded-full flex items-center justify-center transition-colors">
                 <img src="/images/tiktok1.png" alt="LinkedIn" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
               </a>
-              <a href="https://www.linkedin.com/in/linked-tohome-95a93938b/" className="rounded-full flex items-center justify-center transition-colors">
+              <a href="https://www.linkedin.com/company/linkedtohome/" className="rounded-full flex items-center justify-center transition-colors">
                 <img src="/images/Linkedin.png" alt="LinkedIn" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
               </a>
               {/* <a href="#" className="rounded-full flex items-center justify-center transition-colors">

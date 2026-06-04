@@ -834,7 +834,7 @@ function TermsOfService() {
 
                         {/* Social Media Icons */}
                         <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
-                            <a href="https://www.linkedin.com/in/linked-tohome-95a93938b/" className="rounded-full flex items-center justify-center transition-colors">
+                            <a href="https://www.linkedin.com/company/linkedtohome/" className="rounded-full flex items-center justify-center transition-colors">
                                 <img src="/images/Linkedin.png" alt="LinkedIn" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
                             </a>
                             {/* <a href="#" className="rounded-full flex items-center justify-center transition-colors">
