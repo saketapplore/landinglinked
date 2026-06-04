@@ -9,6 +9,7 @@ function PrivacyPolicy() {
         schoolName: '',
         email: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -20,6 +21,9 @@ function PrivacyPolicy() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (isSubmitting) return;
+
+        setIsSubmitting(true);
         console.log('Form submitted:', formData);
 
         try {
@@ -43,7 +47,14 @@ function PrivacyPolicy() {
         } catch (error) {
             console.error('Error submitting form:', error);
             alert('There was an error submitting the form. Please try again later.');
+        } finally {
+            setIsSubmitting(false);
         }
+    };
+
+    const closePopup = () => {
+        setShowPopup(false);
+        setIsSubmitting(false);
     };
 
     return (
@@ -1028,7 +1039,7 @@ function PrivacyPolicy() {
                     {/* Backdrop */}
                     <div
                         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-                        onClick={() => setShowPopup(false)}
+                        onClick={closePopup}
                     />
 
                     {/* Modal Content */}
@@ -1042,7 +1053,7 @@ function PrivacyPolicy() {
                     >
                         {/* Close Button */}
                         <button
-                            onClick={() => setShowPopup(false)}
+                            onClick={closePopup}
                             className="absolute top-2 right-2 sm:top-4 sm:right-4 lg:top-6 lg:right-6 z-10 w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-full bg-white/30 hover:bg-white/50 transition-colors"
                         >
                             <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1185,13 +1196,14 @@ function PrivacyPolicy() {
                                         {/* Submit Button */}
                                         <button
                                             type="submit"
-                                            className="w-full mt-2 sm:mt-3 bg-[#173570] text-white py-2 sm:py-2.5 rounded-lg hover:bg-[#00456a] transition-colors font-medium"
+                                            disabled={isSubmitting}
+                                            className="w-full mt-2 sm:mt-3 bg-[#173570] text-white py-2 sm:py-2.5 rounded-lg hover:bg-[#00456a] transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#173570]"
                                             style={{
                                                 fontFamily: 'Poppins, sans-serif',
                                                 fontSize: 'clamp(14px, 2vw, 16px)'
                                             }}
                                         >
-                                            Submit
+                                            {isSubmitting ? 'Submitting...' : 'Submit'}
                                         </button>
                                     </form>
                                 </div>
