@@ -193,7 +193,7 @@ function Pricing() {
               const dotColors = ['bg-blue-400', 'bg-amber-400', 'bg-emerald-400'];
               const durationKey = `year${selectedDuration}` as 'year1' | 'year2' | 'year3';
               const activePrice = tier.prices[durationKey];
-              const registerUrl = `http://localhost:5173/register?duration=${selectedDuration}&tier=${tier.name}`;
+              const registerUrl = `https://linked-to-home-web.applore.in/register?duration=${selectedDuration}&tier=${tier.name}`;
               return (
                 <div
                   key={tier.name}
@@ -330,7 +330,7 @@ function Pricing() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://localhost:5174/register"
+              href="https://linked-to-home-web.applore.in/register"
               className="inline-block bg-[#08A0AF] text-white px-10 py-3.5 rounded-xl font-semibold text-base hover:bg-[#069aaa] transition-colors"
             >
               Register Your School
