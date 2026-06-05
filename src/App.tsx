@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { submitPilotProgramForm } from './utils/axios.config';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,26 +28,14 @@ function App() {
     console.log('Form submitted:', formData);
 
     try {
-      const response = await fetch('https://linked-to-home-api.applore.in/api/admin/pilot-program/submit-form', {
-
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        alert('Thank you for your interest! We will get in touch soon.');
-        setShowPopup(false);
-        setFormData({ fullName: '', schoolName: '', email: '' });
-      } else {
-        const errorData = await response.json();
-        alert(`Failed to submit: ${errorData.message || 'Unknown error'}`);
-      }
-    } catch (error) {
+      await submitPilotProgramForm(formData);
+      alert('Thank you for your interest! We will get in touch soon.');
+      setShowPopup(false);
+      setFormData({ fullName: '', schoolName: '', email: '' });
+    } catch (error: any) {
       console.error('Error submitting form:', error);
-      alert('There was an error submitting the form. Please try again later.');
+      const errorMessage = error.response?.data?.message || error.message || 'Unknown error';
+      alert(`Failed to submit: ${errorMessage}`);
     } finally {
       setIsSubmitting(false);
     }
