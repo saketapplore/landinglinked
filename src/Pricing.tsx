@@ -400,10 +400,10 @@ function Pricing() {
                 </div>
                 <div className="flex flex-col px-3 sm:px-6 md:px-8 lg:px-2 ml-2 bg-white py-2 sm:py-0">
                   <h2 className="mb-1 sm:mb-2" style={{ color: '#003049', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(18px, 3vw, 24px)', fontWeight: 700, lineHeight: '1.3' }}>
-                    Be part of LinkEdtohome's Pilot Programme
+                    Be part of LinkEDtohome's Pilot Programme
                   </h2>
                   <p className="mb-3 sm:mb-4" style={{ color: '#827E7E', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(12px, 2vw, 15px)', fontWeight: 400, lineHeight: '1.5' }}>
-                    LinkEdtohome is officially launching in September 2026. Register your interest below to get early access and help shape the platform.
+                    LinkEDtohome is officially launching in September 2026. Register your interest below to get early access and help shape the platform.
                   </p>
                   <form onSubmit={handleSubmit} className="space-y-2 sm:space-y-3 p-2 sm:p-4 md:p-5 bg-[#fffdf9] rounded-lg">
                     {[

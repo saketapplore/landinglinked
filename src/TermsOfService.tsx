@@ -930,7 +930,7 @@ function TermsOfService() {
                                             lineHeight: '1.3'
                                         }}
                                     >
-                                        Be part of LinkEdtohome's Pilot Programme
+                                        Be part of LinkEDtohome's Pilot Programme
                                     </h2>
                                     <p
                                         className="mb-3 sm:mb-4"
@@ -942,7 +942,7 @@ function TermsOfService() {
                                             lineHeight: '1.5'
                                         }}
                                     >
-                                        LinkEdtohome is officially launching in September 2026. Register your interest below to get early access and help shape the platform.
+                                        LinkEDtohome is officially launching in September 2026. Register your interest below to get early access and help shape the platform.
                                     </p>
 
                                     {/* Form */}
