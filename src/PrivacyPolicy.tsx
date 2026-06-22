@@ -1,4 +1,5 @@
-import { useState, useEffect, ReactNode } from 'react';
+import { useState, useEffect } from 'react';
+import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { submitPilotProgramForm, getPublicPolicy } from './utils/axios.config';
 import type { PolicySection } from './utils/axios.config';
