@@ -1,6 +1,54 @@
-import { useState } from 'react';
+import { useState, useEffect, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { submitPilotProgramForm } from './utils/axios.config';
+import { submitPilotProgramForm, getPublicPolicy } from './utils/axios.config';
+import type { PolicySection } from './utils/axios.config';
+
+// ─── Body renderer (paragraphs, bullet lists, **bold**, [link](url)) ──────────
+function renderBody(body: string) {
+    if (!body.trim()) return null;
+    const blocks = body.split('\n\n').filter(Boolean);
+    return blocks.map((block, bi) => {
+        const lines = block.split('\n');
+        const isList = lines.every(l => l.trimStart().startsWith('- '));
+        if (isList) {
+            return (
+                <ul key={bi} className="list-disc pl-6 mb-3 space-y-1">
+                    {lines.map((l, li) => (
+                        <li key={li} style={{ color: 'var(--Sub-text, #827E7E)', fontFamily: 'Lato, sans-serif', fontSize: 'clamp(14px, 2vw, 16px)', fontWeight: 400, lineHeight: '1.6' }}>
+                            {renderInline(l.replace(/^[\s]*-\s*/, ''))}
+                        </li>
+                    ))}
+                </ul>
+            );
+        }
+        return (
+            <p key={bi} className="mb-3" style={{ color: 'var(--Sub-text, #827E7E)', fontFamily: 'Lato, sans-serif', fontSize: 'clamp(14px, 2vw, 16px)', fontWeight: 400, lineHeight: '1.6' }}>
+                {renderInline(block)}
+            </p>
+        );
+    });
+}
+
+function renderInline(text: string): ReactNode[] {
+    const parts: React.ReactNode[] = [];
+    const regex = /(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g;
+    let last = 0;
+    let m: RegExpExecArray | null;
+    while ((m = regex.exec(text)) !== null) {
+        if (m.index > last) parts.push(<span key={last}>{text.slice(last, m.index)}</span>);
+        const chunk = m[0];
+        if (chunk.startsWith('**')) {
+            parts.push(<strong key={m.index} style={{ color: 'var(--deep-blue, #003049)', fontWeight: 600 }}>{chunk.slice(2, -2)}</strong>);
+        } else {
+            const linkText = chunk.match(/\[([^\]]+)\]/)![1];
+            const href = chunk.match(/\(([^)]+)\)/)![1];
+            parts.push(<a key={m.index} href={href} className="text-[#08A0AF] hover:underline">{linkText}</a>);
+        }
+        last = m.index + chunk.length;
+    }
+    if (last < text.length) parts.push(<span key={last}>{text.slice(last)}</span>);
+    return parts;
+}
 
 function PrivacyPolicy() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,6 +59,21 @@ function PrivacyPolicy() {
         email: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const [policyTitle, setPolicyTitle] = useState('Privacy Policy');
+    const [policyLastUpdated, setPolicyLastUpdated] = useState('January 2026');
+    const [policySections, setPolicySections] = useState<PolicySection[]>([]);
+    const [policyLoading, setPolicyLoading] = useState(true);
+
+    useEffect(() => {
+        getPublicPolicy('privacy_policy').then(data => {
+            if (data && data.sections && data.sections.length > 0) {
+                setPolicyTitle(data.title || 'Privacy Policy');
+                setPolicyLastUpdated(data.lastUpdated || '');
+                setPolicySections([...data.sections].sort((a, b) => a.order - b.order));
+            }
+        }).finally(() => setPolicyLoading(false));
+    }, []);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -112,47 +175,42 @@ function PrivacyPolicy() {
 
             {/* Privacy Policy Content */}
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-                {/* Title */}
-                <h1
-                    className="mb-2"
-                    style={{
-                        color: 'var(--deep-blue, #003049)',
-                        fontFamily: 'Poppins, sans-serif',
-                        fontSize: 'clamp(28px, 4vw, 42px)',
-                        fontWeight: 700,
-                        lineHeight: '1.2'
-                    }}
-                >
-                    Privacy Policy
-                </h1>
-
-                <h2
-                    className="mb-8"
-                    style={{
-                        color: 'var(--deep-blue, #003049)',
-                        fontFamily: 'Poppins, sans-serif',
-                        fontSize: 'clamp(16px, 2.5vw, 24px)',
-                        fontWeight: 600,
-                        lineHeight: '1.3'
-                    }}
-                >
-                    LinkEDtohome
-                </h2>
-
-                <p
-                    className="mb-8"
-                    style={{
-                        color: 'var(--Sub-text, #827E7E)',
-                        fontFamily: 'Lato, sans-serif',
-                        fontSize: 'clamp(14px, 2vw, 16px)',
-                        fontWeight: 400,
-                        lineHeight: '1.6'
-                    }}
-                >
-                    <strong style={{ color: 'var(--deep-blue, #003049)', fontWeight: 600 }}>Last updated:</strong> January 2026
-                </p>
-
-                <div className="space-y-8">
+                {policyLoading ? (
+                    <div className="flex justify-center py-24">
+                        <svg className="animate-spin w-8 h-8 text-[#003049]/30" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                        </svg>
+                    </div>
+                ) : (
+                    <>
+                        <h1 className="mb-2" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 700, lineHeight: '1.2' }}>
+                            {policyTitle}
+                        </h1>
+                        <h2 className="mb-8" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(16px, 2.5vw, 24px)', fontWeight: 600, lineHeight: '1.3' }}>
+                            LinkEDtohome
+                        </h2>
+                        {policyLastUpdated && (
+                            <p className="mb-8" style={{ color: 'var(--Sub-text, #827E7E)', fontFamily: 'Lato, sans-serif', fontSize: 'clamp(14px, 2vw, 16px)', fontWeight: 400, lineHeight: '1.6' }}>
+                                <strong style={{ color: 'var(--deep-blue, #003049)', fontWeight: 600 }}>Last updated:</strong> {policyLastUpdated}
+                            </p>
+                        )}
+                        <div className="space-y-8">
+                            {policySections.map((sec, i) => (
+                                <div key={i}>
+                                    {sec.heading && (
+                                        <h3 className="mb-3" style={{ color: 'var(--deep-blue, #003049)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(18px, 2.5vw, 22px)', fontWeight: 600, lineHeight: '1.3' }}>
+                                            {sec.heading}
+                                        </h3>
+                                    )}
+                                    {renderBody(sec.body || '')}
+                                </div>
+                            ))}
+                        </div>
+                    </>
+                )}
+                {/* legacy hardcoded sections removed — content is now CMS-driven */}
+                <div className="space-y-8 hidden">
                     {/* Introduction */}
                     <div>
                         <p
@@ -962,6 +1020,7 @@ function PrivacyPolicy() {
                     </div>
                 </div>
             </div>
+            {/* End of legacy hidden content */}
 
             {/* Footer */}
             <footer className="bg-white py-6 sm:py-8 lg:py-12">

@@ -23,4 +23,31 @@ export const submitPilotProgramForm = async (formData: PilotProgramSubmission) =
   return response.data;
 };
 
+export interface PolicySection {
+  heading: string;
+  body: string;
+  order: number;
+}
+
+export interface PolicyContent {
+  key: string;
+  title: string;
+  lastUpdated: string;
+  sections: PolicySection[];
+  version: number;
+}
+
+/**
+ * Fetch a public policy document (privacy_policy | terms_conditions).
+ * No auth required — served from /public/cms/:key.
+ */
+export const getPublicPolicy = async (key: 'privacy_policy' | 'terms_conditions'): Promise<PolicyContent | null> => {
+  try {
+    const response = await api.get(`/public/cms/${key}`);
+    return response.data?.data || null;
+  } catch {
+    return null;
+  }
+};
+
 export default api;
