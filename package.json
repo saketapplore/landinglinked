@@ -4,8 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build && cd server && npm install",
+    "dev": "vite --mode localhost",
+    "dev:development": "vite --mode development",
+    "dev:staging": "vite --mode staging",
+    "dev:production": "vite --mode production",
+    "build": "tsc && vite build --mode production && cd server && npm install",
+    "build:staging": "tsc && vite build --mode staging",
+    "build:production": "tsc && vite build --mode production && cd server && npm install",
     "preview": "vite preview",
     "start": "node server/index.js"
   },

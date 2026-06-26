@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://linked-to-home-api.applore.in/api';
+import { API_URL as API_BASE, APP_URL } from './config/index';
+
 
 const FALLBACK_TIERS = [
   { name: 'small', minPupils: 0, maxPupils: 100, prices: { year1: 500, year2: 950, year3: 1400 } },
@@ -193,7 +194,7 @@ function Pricing() {
               const dotColors = ['bg-blue-400', 'bg-amber-400', 'bg-emerald-400'];
               const durationKey = `year${selectedDuration}` as 'year1' | 'year2' | 'year3';
               const activePrice = tier.prices[durationKey];
-              const registerUrl = `https://linked-to-home-web.applore.in/register?duration=${selectedDuration}&tier=${tier.name}`;
+              const registerUrl = `${APP_URL}/register?duration=${selectedDuration}&tier=${tier.name}`;
               return (
                 <div
                   key={tier.name}
@@ -330,7 +331,7 @@ function Pricing() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://linked-to-home-web.applore.in/register"
+              href={`${APP_URL}/register`}
               className="inline-block bg-[#08A0AF] text-white px-10 py-3.5 rounded-xl font-semibold text-base hover:bg-[#069aaa] transition-colors"
             >
               Register Your School
