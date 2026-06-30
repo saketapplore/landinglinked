@@ -9,6 +9,8 @@
     "dev:staging": "vite --mode staging",
     "dev:production": "vite --mode production",
     "build": "tsc && vite build --mode production && cd server && npm install",
+    "build:dev": "tsc && vite build --mode development",
+    "build:development": "tsc && vite build --mode development",
     "build:staging": "tsc && vite build --mode staging",
     "build:production": "tsc && vite build --mode production && cd server && npm install",
     "preview": "vite preview",
